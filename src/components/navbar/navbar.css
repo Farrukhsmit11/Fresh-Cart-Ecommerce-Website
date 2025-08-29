@@ -6,17 +6,41 @@
 
 .cart-logo {
     margin: 12px;
-    width: 177px;
+    width: 184px;
+}
+
+
+.form-label{
+    margin-bottom: .5rem;
+    color: #3d4f58;
 }
 
 
 .nav-container {
     display: flex;
     align-items: center;
-    /* justify-content: space-around;    */
+    justify-content: space-around;
     padding: 12px 24px;
     background: #fff;
     border-bottom: 1px solid #eee;
+}
+
+.signup-modal {
+    font-size: 24px;
+
+}
+
+
+.ant-modal-title{
+    padding: 11px 0;
+    font-size: 24px;
+}
+
+
+.signup-button {
+    width: 142px;
+    padding: 17px;
+    background: #0aad0a;
 }
 
 .btn-outline-gray-400 {
@@ -38,10 +62,9 @@
 
 
 .nav-left {
-    width: 100%;
     display: flex;
     align-items: center;
-    margin-right: 24px;
+    margin-right: 79px;
     gap: 40px;
 }
 
@@ -58,7 +81,7 @@
 .input-group {
     display: flex;
     padding: 23px;
-    gap: 12px;
+    gap: 8px;
     color: #5c6c75;
 }
 
@@ -98,7 +121,7 @@
 }
 
 
-.logo{
+.logo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -115,4 +138,17 @@
     width: 194px;
     border-radius: 8px;
 
+}
+
+
+.agree-to-terms p {
+    padding: 11px 0;
+}
+
+
+.name-input , .password-input, .name-input{
+    border: 1px solid #dfe2e1;
+    border-radius: 9px;
+    padding: 11px 12px;
+    transition: border-color 0.3s;
 }

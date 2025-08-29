@@ -24,7 +24,7 @@ const ImageSlider = () => {
             imgSrc: "https://freshcart-next-js-template.netlify.app/images/slider/slide-1.jpg",
             title: "SuperMarket For Fresh Grocery",
             description: "Introduced a new model for online grocery shopping and convenient home delivery.",
-            Badge: "Open sale Discount 50%"
+            Badge: "Opening sale Discount 50%"
         },
 
         {
@@ -38,7 +38,7 @@ const ImageSlider = () => {
     ]
 
     return (
-        <main>
+      
             <div className="container">
                 <Swiper
                     spaceBetween={30}
@@ -59,9 +59,9 @@ const ImageSlider = () => {
                     {slidesData.map((slide, index) => (
                         <SwiperSlide key={index}>
                             <div className="slide-wrapper">
-                                <img src={slide.imgSrc} />
+                                <img className="slide-image" src={slide.imgSrc} />
                                 <div className="slide-content">
-                                   <span className= "badge">{slide.Badge}</span>
+                                    <span className="badge">{slide.Badge}</span>
                                     <h1 className="grocery-title" style={{ fontWeight: 'bold', marginTop: '16px' }}>{slide.title}</h1>
                                     <p className="slide-description">{slide.description}</p>
                                     <Button className="show-now-btn">Show Now  <ArrowRightOutlined /></Button>
@@ -78,7 +78,6 @@ const ImageSlider = () => {
                     </div>
                 </Swiper>
             </div>
-        </main>
 
     )
 }

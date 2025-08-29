@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Plus Jakarta Sans" !important;
 }
 
 
@@ -36,6 +37,10 @@ p {
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 0.5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -68,7 +73,7 @@ p {
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 10px;
 }
 
 .show-now-btn {
@@ -81,7 +86,7 @@ p {
 
 
 .grocery-title {
-    font-size: calc(1.425rem + 2.1vw);
+    font-size: 49px;
     font-weight: 700;
     -fc-text-opacity: 1;
     color: rgba(var(--fc-dark-rgb), var(--fc-text-opacity)) !important;
@@ -92,6 +97,8 @@ p {
         font-size: 3rem;
     }
 }
+
+
 
 
 @media (min-width: 1400px) {
