@@ -1,5 +1,5 @@
 import { SearchOutlined, ShoppingCartOutlined, UserOutlined, HeartOutlined, EnvironmentOutlined } from "@ant-design/icons";
-import { Button, Input, Badge, Modal, Form, Checkbox } from "antd";
+import { Button, Input, Badge, Modal, Form, Checkbox, message } from "antd";
 import "./navbar.css";
 import { useEffect, useState } from "react";
 import { Form as AntForm } from "antd";
@@ -52,6 +52,14 @@ const Navbar = () => {
   const handleSignupCancel = () => {
     setOpenSignup(false);
   }
+
+  const onFinish = (values) => {
+    console.log('Success:', values);
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
 
 
 
@@ -115,68 +123,81 @@ const Navbar = () => {
       >
 
         <div className="signup-content">
-          <Form
+          <AntForm
             form={form}
             name="register"
+            layout="vertical"
             initialValues={{ residence: ['zhejiang', 'hangzhou', 'xihu'], prefix: '86' }}
             style={{ maxWidth: 600 }}
             scrollToFirstError
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            className="signup-form"
+            autoComplete="off"
           >
 
-            <label className="form-label" htmlFor="username">Name</label>
-            <Form.Item
+            {/* {Name} */}
+            <AntForm.Item
               name="username"
-              rules={[{ required: true, message: 'Please input your name' }]}
+              label="Name"
+              rules={[{ required: true, message: 'Enter your Name' }]}
             >
-              <Input className="name-input" placeholder="Please input your name" />
-            </Form.Item>
+              <Input className="name-input" placeholder="Enter your Name" />
+            </AntForm.Item>
 
-            <label className="form-label" htmlFor="email">E-mail </label>
-            <Form.Item
-              name="email"
-              placeholder="Please input your email"
+
+            {/* Email */}
+            <AntForm.Item
+            name={email}
+              label={<span className="form-label">Email Address</span>}
               rules={[
-                {
-                  type: 'email',
-                  message: 'The input is not valid E-mail!',
-                },
-                {
-                  required: true,
-                  message: 'Please input your E-mail!',
-                },
-              ]}
-            >
-              <Input className="email-input" />
-            </Form.Item>
-
-            <label className="form-label" htmlFor="password">Password</label>
-            <Form.Item
-              name="password"
-              placeholder="Please input your password"
-
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your password!',
-                },
+                { required: true, message: 'Please input your email address!' },
+                { type: "email", message: "please enter valid email" }
               ]}
               hasFeedback
             >
-              <Input.Password className="password-input" />
+              <Input
+                placeholder="Enter your Email Address"
+                className="email-input"
+                type="email"
+              />
+            </AntForm.Item>
 
-              <div className="agree-to-terms">
-                <p>By Signup , you agree to <a href="">Terms and Services</a> & <a href="">Privacy Policy</a></p>
-              </div>
 
-              <div className=" submit-buttons">
-                <Button type="primary" htmlType="submit" className="signup-button">Sign Up</Button>
-              </div>
 
-            </Form.Item>
-          </Form>
+            {/* Password */}
+            <AntForm.Item
+              label={<span className="form-label">Password</span>}
+              name={Password}
+              rules={[
+                { required: true, message: "Please enter your Email" },
+                {type: "password" , message: "Please enter valid password"}
+              ]}
+              hasFeedback
+            >
+              <Input
+                name="Password"
+                placeholder="Enter your password"
+                className="email-input"
+                type="password"
+              />
+            </AntForm.Item>
+
+            <div className="agree-to-terms">
+              <p>By Signup , you agree to <a href="">Terms and Services</a> & <a href="">Privacy Policy</a></p>
+            </div>
+
+            <div className=" submit-buttons">
+              <Button type="primary" htmlType="submit" className="signup-button">Sign Up</Button>
+            </div>
+
+            <div className="account-sign-in">
+              <p className="sign-in-title">Already have an account? <a href="#">Sign in</a> </p>
+            </div>
+          </AntForm>
         </div>
-      </Modal>
-    </div>
+      </Modal >
+    </div >
 
   );
 };
