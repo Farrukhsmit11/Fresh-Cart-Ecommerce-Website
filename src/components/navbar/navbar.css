@@ -9,20 +9,30 @@
     width: 184px;
 }
 
-.signup-modal .ant-modal-title{
+.signup-modal .ant-modal-title {
     font-size: 29px;
     font-weight: 700;
 }
 
-.signup-form{
+.signup-form {
     display: flex;
     flex-direction: column;
     gap: 5px;
 
 }
 
+.signup-modal .ant-modal-title {
+    font-size: 29px;
+    font-weight: 700;
+}
 
-.form-label{
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-label {
     margin-bottom: .5rem;
     color: #3d4f58;
 }
@@ -43,7 +53,7 @@
 }
 
 
-.ant-modal-title{
+.ant-modal-title {
     padding: 11px 0;
     font-size: 24px;
 }
@@ -51,8 +61,12 @@
 
 .signup-button {
     width: 99px;
+    width: 99px;
     padding: 17px;
     background: #0aad0a;
+    border-radius: 12px;
+    text-align: center;
+    height: 49px;
     border-radius: 12px;
     text-align: center;
     height: 49px;
@@ -143,6 +157,13 @@
     gap: 16px;
 }
 
+.sign-in-title {
+    text-align: center;
+}
+
+a {
+    color: #0aad0a !important;
+}
 
 
 .department-btn {
@@ -157,25 +178,39 @@
 
 
 .agree-to-terms p {
-    padding: 18px 0;
     text-align: justify;
     color: #3d4f58;
+    margin-bottom: 26px;
 }
 
-.agree-to-terms a{
+.agree-to-terms a {
     color: #0aad0a;
 }
 
 
-.name-input , .name-input{
+
+.name-input,
+.email-input {
+    display: block;
     border: 1px solid #dfe2e1;
     border-radius: 9px;
-    padding: 11px 12px;
+    padding: .55rem 1rem;
+    line-height: 1.6;
+    font-weight: 700;
+    font-size: .875rem;
     transition: border-color 0.3s;
 }
-    
 
-.password-input{
+
+.password-input {
+    border: 1px solid #dfe2e1;
+    border-radius: 9px;
+    padding: 6px;
+}
+
+
+
+.password-input {
     border: 1px solid #dfe2e1;
     border-radius: 9px;
     padding: 6px;
