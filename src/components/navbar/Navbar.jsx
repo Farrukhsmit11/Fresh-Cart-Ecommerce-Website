@@ -121,58 +121,43 @@ const Navbar = () => {
             initialValues={{ residence: ['zhejiang', 'hangzhou', 'xihu'], prefix: '86' }}
             style={{ maxWidth: 600 }}
             scrollToFirstError
+            className="signup-form"
           >
 
             <label className="form-label" htmlFor="username">Name</label>
             <Form.Item
               name="username"
-              rules={[{ required: true, message: 'Please input your name' }]}
+              rules={[{ required: true, message: 'Enter your Name' }]}
             >
               <Input className="name-input" placeholder="Please input your name" />
             </Form.Item>
 
-            <label className="form-label" htmlFor="email">E-mail </label>
-            <Form.Item
-              name="email"
-              placeholder="Please input your email"
-              rules={[
-                {
-                  type: 'email',
-                  message: 'The input is not valid E-mail!',
-                },
-                {
-                  required: true,
-                  message: 'Please input your E-mail!',
-                },
-              ]}
-            >
-              <Input className="email-input" />
-            </Form.Item>
 
-            <label className="form-label" htmlFor="password">Password</label>
-            <Form.Item
-              name="password"
-              placeholder="Please input your password"
+            <AntForm layout="vertical" form={form}>
 
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your password!',
-                },
-              ]}
-              hasFeedback
-            >
-              <Input.Password className="password-input" />
+              <AntForm.Item
+                label={<span className="form-label">Work Email</span>}
+              >
+                <Input
+                  name="email"
+                  placeholder="john@email.com"
+                  className="form-input"
+                  type="email"
+                />
+              </AntForm.Item>
 
-              <div className="agree-to-terms">
-                <p>By Signup , you agree to <a href="">Terms and Services</a> & <a href="">Privacy Policy</a></p>
-              </div>
 
-              <div className=" submit-buttons">
-                <Button type="primary" htmlType="submit" className="signup-button">Sign Up</Button>
-              </div>
 
-            </Form.Item>
+
+                <div className="agree-to-terms">
+                  <p>By Signup , you agree to <a href="">Terms and Services</a> & <a href="">Privacy Policy</a></p>
+                </div>
+
+                <div className=" submit-buttons">
+                  <Button type="primary" htmlType="submit" className="signup-button">Sign Up</Button>
+                </div>
+             
+            </AntForm>
           </Form>
         </div>
       </Modal>
