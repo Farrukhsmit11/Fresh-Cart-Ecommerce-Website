@@ -38,7 +38,8 @@ const ImageSlider = () => {
     ]
 
     return (
-      
+
+        <section className="section-padding">
             <div className="container">
                 <Swiper
                     spaceBetween={30}
@@ -67,9 +68,10 @@ const ImageSlider = () => {
                                     <Button className="show-now-btn">Show Now  <ArrowRightOutlined /></Button>
                                 </div>
                             </div>
-
                         </SwiperSlide>
                     ))}
+
+
 
                     <div className="autoplay-progress" slot="container-end">
                         <svg viewBox="0 0 48 48" ref={progressCircle}>
@@ -77,7 +79,8 @@ const ImageSlider = () => {
                         <span ref={progressContent}></span>
                     </div>
                 </Swiper>
-            </div>
+            </div >
+        </section>
 
     )
 }

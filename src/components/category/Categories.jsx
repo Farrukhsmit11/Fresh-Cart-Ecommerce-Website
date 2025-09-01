@@ -10,7 +10,6 @@ import { Autoplay, Navigation } from 'swiper/modules';
 
 const Categories = () => {
 
-
     const items = [
         {
             imgSrc: "https://freshcart-next-js-template.netlify.app/images/category/category-fruits-vegetables.jpg",
@@ -62,51 +61,43 @@ const Categories = () => {
             imgSrc: "https://freshcart-next-js-template.netlify.app/images/category/category-pet-care.jpg",
             title: "Pet Care"
         }
-
     ]
 
 
     return (
-        
+        <section className="section-padding">
             <div className="container">
-                <div className="row">
-                    <h3> Featured Categories</h3>
-                </div>
+                <h1>Featured Categories</h1>
+                <Swiper
+                    slidesPerView={'6'}
+                    spaceBetween={30}
+                    navigation={true}
+                    loop={true}
+                    autoplay={{
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    }}
 
-                <main>
-                    <div className="container">
-                        <Swiper
-                            slidesPerView={'6'}
-                            spaceBetween={30}
-                            navigation={true}
-                            loop={true}
-                            autoplay={{
-                                delay: 3500,
-                                disableOnInteraction: false,
-                            }}
-
-                            modules={[Autoplay, Navigation]}
-                            className="mySwiper"
-                        >
-                            {items.map((item, index) => {
-                                return (
-                                    <SwiperSlide key={index}>
-                                        <Card
-                                            className="card1"
-                                        >
-                                            <Meta
-                                                avatar={<img src={item.imgSrc} alt={item.title} />}
-                                                title={item.title}
-                                            />
-                                        </Card>
-
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </Swiper>
-                    </div>
-                </main>
+                    modules={[Autoplay, Navigation]}
+                    className="mySwiper"
+                >
+                    {items.map((item, index) => {
+                        return (
+                            <SwiperSlide key={index}>
+                                <Card
+                                    className="card1"
+                                >
+                                    <Meta
+                                        avatar={<img src={item.imgSrc} alt={item.title} />}
+                                        title={item.title}
+                                    />
+                                </Card>
+                            </SwiperSlide>
+                        )
+                    })}
+                </Swiper>
             </div>
+        </section>
 
 
     )

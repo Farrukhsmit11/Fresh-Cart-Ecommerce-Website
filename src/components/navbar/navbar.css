@@ -9,29 +9,6 @@
     width: 184px;
 }
 
-.signup-modal .ant-modal-title {
-    font-size: 29px;
-    font-weight: 700;
-}
-
-.signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-}
-
-.signup-modal .ant-modal-title {
-    font-size: 29px;
-    font-weight: 700;
-}
-
-.signup-form {
-    display: flex;
-    flex-direction: column;
-}
-
-
 .form-label {
     margin-bottom: .5rem;
     color: #3d4f58;
@@ -41,16 +18,20 @@
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 12px 24px;
+    justify-content: space-evenly;
     background: #fff;
     border-bottom: 1px solid #eee;
+    padding-bottom: 1rem !important;
+    padding: .625rem 1rem;
 }
 
-.signup-modal {
-    font-size: 24px;
 
+.nav-middle-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 
 
 .ant-modal-title {
@@ -59,18 +40,13 @@
 }
 
 
-.signup-button {
-    width: 99px;
-    width: 99px;
-    padding: 17px;
-    background: #0aad0a;
-    border-radius: 12px;
-    text-align: center;
-    height: 49px;
-    border-radius: 12px;
-    text-align: center;
-    height: 49px;
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
+
+
 
 .btn-outline-gray-400 {
     --fc-btn-color: #c1c7c6;
@@ -153,7 +129,6 @@
 .logo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 16px;
 }
 
@@ -191,7 +166,6 @@ a {
 
 .name-input,
 .email-input {
-    display: block;
     border: 1px solid #dfe2e1;
     border-radius: 9px;
     padding: .55rem 1rem;
@@ -214,4 +188,53 @@ a {
     border: 1px solid #dfe2e1;
     border-radius: 9px;
     padding: 6px;
+}
+
+
+
+
+
+/* Signup Modal */
+
+
+.signup-modal .ant-modal-title {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.signup-modal .ant-modal-title {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* .signup-modal {
+    font-size: 24px;
+
+} */
+
+
+.signup-button {
+    width: 99px;
+    width: 99px;
+    padding: 17px;
+    background: #0aad0a;
+    border-radius: 12px;
+    text-align: center;
+    height: 49px;
+    border-radius: 12px;
+    text-align: center;
+    height: 49px;
 }

@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import ImageSlider from "./components/imageslider/ImageSlider";
 import Categories from "./components/category/Categories";
-import Cards from "./components/cards/Cards";
+import ProductCard from "./components/card/ProductCard";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -20,10 +21,12 @@ function App() {
 
   return (
     <>
+    
       <Navbar />
       <ImageSlider />
       <Categories />
-      <Cards />
+      <ProductCard/>
+      
     </>
   );
 }

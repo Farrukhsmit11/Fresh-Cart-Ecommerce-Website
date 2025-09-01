@@ -1,8 +1,8 @@
 h3 {
-    margin-bottom: 27px;
     font-weight: 600;
     font-size: calc(1.278125rem + .3375vw);
     color: var(--fc-heading-color);
+    margin-bottom: 24px;
 }
 
 .card1 {
