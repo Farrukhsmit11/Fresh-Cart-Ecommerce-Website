@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import ImageSlider from "./components/imageslider/ImageSlider";
 import Categories from "./components/category/Categories";
-import ProductCard from "./components/card/ProductCard";
+import Card from "./components/card/Card";
+import PopularProducts from "./components/popularproducts/PopularProducts";
 
 
 function App() {
@@ -21,12 +22,13 @@ function App() {
 
   return (
     <>
-    
+
       <Navbar />
       <ImageSlider />
       <Categories />
-      <ProductCard/>
-      
+      <Card />
+      <PopularProducts />
+
     </>
   );
 }

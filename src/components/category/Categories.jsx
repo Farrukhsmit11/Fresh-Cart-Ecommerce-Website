@@ -67,7 +67,7 @@ const Categories = () => {
     return (
         <section className="section-padding">
             <div className="container">
-                <h1>Featured Categories</h1>
+                <h1 className="category-title">Featured Categories</h1>
                 <Swiper
                     slidesPerView={'6'}
                     spaceBetween={30}
@@ -88,7 +88,7 @@ const Categories = () => {
                                     className="card1"
                                 >
                                     <Meta
-                                        avatar={<img src={item.imgSrc} alt={item.title} />}
+                                        avatar={<img className="" src={item.imgSrc} alt={item.title} />}
                                         title={item.title}
                                     />
                                 </Card>

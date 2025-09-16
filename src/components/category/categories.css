@@ -28,3 +28,9 @@ h3 {
 .ant-card {
     width: 208px;
 }
+
+.category-title {
+    font-size: 24px;
+    margin-bottom: 23px;
+    font-weight: 600;
+}

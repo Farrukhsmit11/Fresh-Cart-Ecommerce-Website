@@ -1,0 +1,46 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.products-content {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.text-content{
+    margin-top: 6px;
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 23px;
+    font-weight: 600;
+}
+
+
+.card-two {
+    width: 200px;
+}
+
+.product-image {
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card-title{
+    font-size: 10px;
+}
+
+.cart-rateing{
+    margin: 6px;
+    font-size: 8px;
+    display: flex;
+}

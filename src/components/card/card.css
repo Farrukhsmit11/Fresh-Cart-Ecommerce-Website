@@ -1,0 +1,54 @@
+.product-title {
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #21313c;
+    font-size: 25px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.cards-section .ant-row {
+    gap: 204px;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.product-description {
+    font-weight: 600;
+    color: gray;
+}
+
+.overlay {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 6%;
+}
+
+
+.shop-now-btn {
+    padding: 22px;
+    background: #001e2b;
+    color: white;
+    border-radius: 10px;
+    width: 105px;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+.card-image {
+    width: 607px;
+    border-radius: var(--fc-border-radius);
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    display: flex;
+}
