@@ -1,8 +1,8 @@
 .product-title {
-    margin-bottom: 15px;
     font-weight: 700;
     color: #21313c;
     font-size: 25px;
+    margin-bottom: 11px;
 }
 
 p {
@@ -17,7 +17,7 @@ p {
     align-items: center;
 }
 
-.product-description {
+.product-card-description {
     font-weight: 600;
     color: gray;
 }

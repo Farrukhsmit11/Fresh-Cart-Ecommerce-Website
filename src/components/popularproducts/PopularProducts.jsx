@@ -1,14 +1,11 @@
-import { Card, Avatar, Flex, Rate } from "antd"
+import { Card, Avatar, Flex, Rate, Button } from "antd"
 const { Meta } = Card;
-import "./products.css"
+import "./Popularproducts.css"
 import { useState } from "react";
 
 const PopularProducts = () => {
+
     const [value, setValue] = useState(false);
-
-
-    // const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
-
 
     const prodctslist = [
         {
@@ -16,7 +13,7 @@ const PopularProducts = () => {
             imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-2.jpg",
             description: "Bakery & Biscuits",
             title: "NutriChoice Digestive",
-            price : 24
+            price: 24
 
         },
 
@@ -59,13 +56,60 @@ const PopularProducts = () => {
 
         },
 
+
+        {
+
+            imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-2.jpg",
+            description: "Bakery & Biscuits",
+            title: "NutriChoice Digestive",
+            price: 24
+
+        },
+
+        {
+            imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-3.jpg",
+            description: "Bakery & Biscuits",
+            title: " Cadbury 5 Star Chocolate",
+            price: 20
+        },
+
+
+        {
+            imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-9.jpg",
+            description: "Snack and Munchies",
+            title: "Slurp Milk Chocolate",
+            price: 45
+
+        },
+
+        {
+            imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-10.jpg",
+            description: "Dairy Bread and Eggs",
+            title: "Amul Butter -500g",
+            price: 120
+        },
+
+
+        {
+
+            imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-2.jpg",
+            description: "Bakery & Biscuits",
+            title: "NutriChoice Digestive",
+            price: 24
+
+        },
+
+
+
+
+
     ]
 
     return (
         <div className="section-padding">
             <div className="container">
                 <div className="row">
-                    <h1 className="product-title">Popular Products</h1>
+                    <h1 className="product-header-title">Popular Products</h1>
                 </div>
                 <div className="products-content">
                     {prodctslist.map((product, index) => {
@@ -84,12 +128,16 @@ const PopularProducts = () => {
                                     </div>
                                     <Flex gap="middle" vertical>
                                         <Flex gap="middle">
-                                            <Rate defaultValue={3}  className="cart-rateing"/>
-                                            <p>{product.price.toFixed(2)}</p>
+                                            <div className="rating-price">
+                                                <Rate defaultValue={3} className="cart-rateing" />
+                                                <p>{product.price.toFixed(2)}</p>
+                                            </div>
+                                            <div className="add-to-cart">
+                                                <Button>Add</Button>
+                                            </div>
                                         </Flex>
                                     </Flex>
                                 </Card>
-
                             </div>
                         )
                     })}

@@ -1,7 +1,7 @@
 import { Card, Avatar } from "antd"
 const { Meta } = Card;
 import "./categories.css"
-import "../imageslider/ImageSlider.css"
+import "../home/home.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';

@@ -32,7 +32,7 @@ const Card = () => {
                                             <img className='card-image' src={product.imgSrc} alt={product.title} />
                                             <div className="overlay">
                                                 <h1 className='product-title'>{product.title}</h1>
-                                                <p className='product-description'>{product.description}</p>
+                                                <p className='product-card-description'>{product.description}</p>
                                                 <Button className="shop-now-btn">Shop Now </Button>
                                             </div>
                                         </div>

@@ -3,6 +3,7 @@ import { Button, Input, Badge, Modal, Form as AntForm, AutoComplete } from "antd
 import "./navbar.css";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [form] = AntForm.useForm();
@@ -10,6 +11,8 @@ const Navbar = () => {
   const [openSignup, setOpenSignup] = useState(false);
   const [checkNick, setCheckNick] = useState(false);
   const [inputvalue, setinputvalue] = useState("");
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     form.validateFields(["nickname"]);
@@ -42,6 +45,11 @@ const Navbar = () => {
   }
 
 
+  const Signinavigate = () => {
+    navigate("/signin");
+  }
+
+
   return (
     <div className="nav-container">
       <Toaster />
@@ -54,8 +62,6 @@ const Navbar = () => {
           />
         </div>
       </div>
-
-
       <div className="nav-middle-section">
         <Input
           size="large"
@@ -73,7 +79,6 @@ const Navbar = () => {
           Location
         </Button>
       </div>
-
 
       <div className="nav-right">
         <div className="nav-icons">
@@ -108,7 +113,6 @@ const Navbar = () => {
       </Modal>
 
 
-
       {/* Signup Modal */}
       <Modal
         open={openSignup}
@@ -139,17 +143,13 @@ const Navbar = () => {
               name="username"
               label="Name"
               rules={[{ required: true, message: "Enter your Name" },
-              { type: "email", message: "pleaswe enter valid email" }
+              { type: "username", message: "Please enter valid email" }
               ]}
 
               hasFeedback
-
             >
-
-        
               <Input className="name-input" placeholder="Enter your Name" />
             </AntForm.Item>
-
 
             <AntForm.Item
               name="email"
@@ -173,7 +173,7 @@ const Navbar = () => {
               label="Password"
               rules={[
                 { required: true, message: "Please enter your password" },
-                { min: 6, message: "Password must be at least 6 characters" },
+                { type: "password", min: 6, message: "Password must be at least 6 characters" },
               ]}
               hasFeedback
             >
@@ -198,17 +198,17 @@ const Navbar = () => {
               </Button>
             </div>
 
-
             <div className="account-sign-in">
-              <p className="sign-in-title">
-                Already have an account? <a href="#">Sign in</a>
+              <p className="sign-in-title" onClick={() => {
+                window.location.href = "/signin";
+              }}>
+                Already have an account? <Link to={"/signin"}>Sign in</Link>
               </p>
             </div>
           </AntForm>
         </div>
       </Modal>
-
-    </div >
+    </div>
   );
 };
 
