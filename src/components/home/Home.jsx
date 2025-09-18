@@ -10,6 +10,7 @@ import { Badge, Button, Card } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import Categories from "../category/Categories";
 import PopularProducts from "../popularproducts/PopularProducts";
+import ShopNowCard from "../card/ShopNowCard";
 
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
     <>
         <Home />
         <Categories />
-        {/* <Card /> */}
+        <ShopNowCard />
         <PopularProducts />
     </>
 
