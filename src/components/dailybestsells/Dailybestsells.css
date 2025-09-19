@@ -1,0 +1,54 @@
+.card-image-div {
+    background-image: url(https://freshcart-next-js-template.netlify.app/images/banner/banner-deal.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 470px;
+    width: 345px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 7px;
+}
+
+.heading-one {
+    font-size: 22px;
+    margin-bottom: 23px;
+    font-weight: 600;
+}
+
+.card-overlay {
+    width: 100%;
+    position: absolute;
+    top: 8%;
+    left: 6%;
+}
+
+.title-one {
+    font-size: 26px;
+    color: white;
+    font-weight: 700;
+}
+
+.coffee-card-description {
+    color: white;
+    font-weight: 500;
+}
+
+.shop-btn {
+    padding: 18px;
+    background: #0aad0a;
+    color: white;
+    border: none;
+}
+
+.best-sell {
+    display: flex;
+    gap: 20px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    background: #0aad0a;
+    color: white;
+}

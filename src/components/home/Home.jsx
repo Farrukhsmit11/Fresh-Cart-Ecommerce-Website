@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useRef } from "react";
-import { Badge, Button, Card } from "antd";
+import { Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import Categories from "../category/Categories";
 import PopularProducts from "../popularproducts/PopularProducts";
@@ -21,13 +21,6 @@ const Home = () => {
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
 
-
-    <>
-        <Home />
-        <Categories />
-        <ShopNowCard />
-        <PopularProducts />
-    </>
 
     const slidesData = [
         {
@@ -89,6 +82,11 @@ const Home = () => {
                         <span ref={progressContent}></span>
                     </div>
                 </Swiper>
+
+                 {/* More sections */}
+                <Categories />
+                <ShopNowCard />
+                <PopularProducts />
             </div >
         </section>
 

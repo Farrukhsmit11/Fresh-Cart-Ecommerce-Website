@@ -26,41 +26,9 @@ const Signin = () => {
         form.resetFields();
     };
 
-    const footerlinks = [
-
-        {
-            title: "Breakfast and Instant food"
-        },
-
-
-        {
-            title: "Vegetable foods"
-        },
-
-
-        {
-            title: "Bakery & Biscuits"
-        },
-
-
-        {
-            title: "Sauces & spreads"
-        },
-
-
-        {
-            title: "Organic & gourment"
-        },
-
-
-        {
-            title: "Cleaning & essentials"
-        }
-    ]
 
     return (
         <>
-
             <div className="fresh-cart-banner">
                 <nav className="shadow-sm">
                     <div className="logo">
@@ -132,36 +100,6 @@ const Signin = () => {
                     </div>
                 </div>
             </div>
-
-            <footer className="footer">
-                <div className="container">
-                    <h2 className="footer-heading">Categories</h2>
-                    <div className="nav-item">
-                        {footerlinks.map((link, index) => {
-                            return (
-                                <div key={index}>
-                                    <Link key={index} to={"/"} className="nav-link">
-                                        {link.title}
-                                    </Link>
-
-                                   
-                                </div>
-                            )
-                        })}
-
-                        {/* <Link to={"#"} className="nav-link">
-                            Vegetables & Fruits</Link>
-                        <Link to={"#"} className="nav-link">Breakfast and instant food</Link>
-                        <Link to={"#"} className="nav-link"></Link>
-                        <Link to={"#"} className="nav-link"></Link>
-                        <Link to={"#"} className="nav-link"></Link>
-                        <Link to={"#"} className="nav-link"></Link>
-                        <Link to={"#"} className="nav-link"></Link>
-                        <Link to={"#"} className="nav-link"></Link> */}
-                    </div>
-                </div>
-            </footer>
-
         </>
     )
 }

@@ -47,6 +47,8 @@ p {
 
 
 
+
+
 h1 {
     font-weight: 700;
     font-size: 28px;
@@ -88,20 +90,4 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-
-/* footer */
-
-.footer {
-    background: lightgray;
-    padding: 4rem 0;
-}
-
-.nav-link {
-    display: flex;
-    flex-direction: row;
-    color: gray;
-    text-decoration: none;
-    margin-top: 19px;
 }

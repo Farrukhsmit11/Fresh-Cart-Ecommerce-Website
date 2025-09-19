@@ -1,12 +1,8 @@
 import { Card, Avatar, Flex, Rate, Button } from "antd"
 const { Meta } = Card;
 import "./Popularproducts.css"
-import { useState } from "react";
 
 const PopularProducts = () => {
-
-    const [value, setValue] = useState(false);
-
     const prodctslist = [
         {
 
@@ -58,7 +54,6 @@ const PopularProducts = () => {
 
 
         {
-
             imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-2.jpg",
             description: "Bakery & Biscuits",
             title: "NutriChoice Digestive",
@@ -88,21 +83,6 @@ const PopularProducts = () => {
             title: "Amul Butter -500g",
             price: 120
         },
-
-
-        {
-
-            imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-2.jpg",
-            description: "Bakery & Biscuits",
-            title: "NutriChoice Digestive",
-            price: 24
-
-        },
-
-
-
-
-
     ]
 
     return (
