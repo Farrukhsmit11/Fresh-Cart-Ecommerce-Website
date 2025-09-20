@@ -1,9 +1,10 @@
-import { SearchOutlined, ShoppingCartOutlined, UserOutlined, HeartOutlined, EnvironmentOutlined } from "@ant-design/icons";
-import { Button, Input, Badge, Modal, Form as AntForm, AutoComplete } from "antd";
+import { SearchOutlined, UserOutlined, HeartOutlined, EnvironmentOutlined } from "@ant-design/icons";
+import { Button, Input, Badge, Modal, Form as AntForm, Space, Drawer, Alert } from "antd";
 import "./navbar.css";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from "react-router-dom";
+import { FaCartArrowDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [form] = AntForm.useForm();
@@ -11,7 +12,8 @@ const Navbar = () => {
   const [openSignup, setOpenSignup] = useState(false);
   const [checkNick, setCheckNick] = useState(false);
   const [inputvalue, setinputvalue] = useState("");
-
+  const [open, setOpen] = useState(false);
+  const [placement, setPlacement] = useState('right');
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -44,10 +46,22 @@ const Navbar = () => {
     setOpenLocation(false);
   }
 
-
   const Signinavigate = () => {
     navigate("/signin");
-  }
+  };
+
+
+  // Drawer Functionality
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onChange = e => {
+    setPlacement(e.target.value);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
 
 
   return (
@@ -89,9 +103,25 @@ const Navbar = () => {
             onClick={() => setOpenSignup(true)}
             style={{ fontSize: "24px", color: "#5c6c75" }}
           />
-          <Badge count={5}>
-            <ShoppingCartOutlined style={{ fontSize: "24px", color: "#5c6c75" }} />
-          </Badge>
+          <FaCartArrowDown onClick={showDrawer} className="nav-cart-icon" />
+          <Drawer
+            title={
+              <div>
+                <div style={{ fontSize: "18px", fontWeight: "bold" }}>
+                  Shop Cart
+                </div>
+                <div style={{ fontSize: "14px", color: "gray" }}>
+                  Location in 382480
+                </div>
+              </div>
+            }
+            placement={placement}
+            width={500}
+            onClose={onClose}
+            open={open}
+          >
+            <Alert message="You’ve got FREE delivery. Start checkout now!" type="success" />
+          </Drawer>
         </div>
       </div>
 
@@ -208,7 +238,7 @@ const Navbar = () => {
           </AntForm>
         </div>
       </Modal>
-    </div>
+    </div >
   );
 };
 

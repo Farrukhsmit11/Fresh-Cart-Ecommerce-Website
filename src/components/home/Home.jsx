@@ -27,15 +27,12 @@ const Home = () => {
             imgSrc: "https://freshcart-next-js-template.netlify.app/images/slider/slide-1.jpg",
             title: "SuperMarket For Fresh Grocery",
             description: "Introduced a new model for online grocery shopping and convenient home delivery.",
-            Badge: "Opening sale Discount 50%"
         },
 
         {
             imgSrc: "https://freshcart-next-js-template.netlify.app/images/slider/slide-2.jpg",
             title: "Free Shipping on orders over $100",
             description: "Free Shipping to First-Time Customers Only, After promotions and discounts are applied",
-            Badge: "Free Shipping - orders over $100"
-
         },
 
     ]
@@ -67,7 +64,7 @@ const Home = () => {
                             <div className="slide-wrapper">
                                 <img className="slide-image" src={slide.imgSrc} />
                                 <div className="slide-content">
-                                    <span className="badge">{slide.Badge}</span>
+                                    {/* <span className="badge">{slide.Badge}</span> */}
                                     <h1 className="grocery-title" style={{ fontWeight: 'bold', marginTop: '16px' }}>{slide.title}</h1>
                                     <p className="slide-description">{slide.description}</p>
                                     <Button className="show-now-btn">Show Now  <ArrowRightOutlined /></Button>
@@ -83,7 +80,7 @@ const Home = () => {
                     </div>
                 </Swiper>
 
-                 {/* More sections */}
+                {/* More sections */}
                 <Categories />
                 <ShopNowCard />
                 <PopularProducts />

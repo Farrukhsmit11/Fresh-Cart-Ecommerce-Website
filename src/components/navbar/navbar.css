@@ -162,8 +162,6 @@ a {
     color: #0aad0a;
 }
 
-
-
 .name-input,
 .email-input {
     border: 1px solid #dfe2e1;
@@ -219,13 +217,6 @@ a {
     flex-direction: column;
 }
 
-
-/* .signup-modal {
-    font-size: 24px;
-
-} */
-
-
 .signup-button {
     width: 99px;
     width: 99px;
@@ -237,4 +228,12 @@ a {
     border-radius: 12px;
     text-align: center;
     height: 49px;
+}
+
+/* //////////// */
+
+.nav-cart-icon {
+    font-size: 24px;
+    color: #5c6c75;
+    cursor: pointer;
 }
