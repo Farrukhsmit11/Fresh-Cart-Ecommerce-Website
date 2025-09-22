@@ -1,4 +1,4 @@
-.card-image-div {
+.card-image-wrapper {
     background-image: url(https://freshcart-next-js-template.netlify.app/images/banner/banner-deal.jpg);
     background-size: cover;
     background-position: center;
@@ -42,13 +42,49 @@
     border: none;
 }
 
-.best-sell {
-    display: flex;
-    gap: 20px;
+.best-sell-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 86px;
+    align-items: stretch;
 }
 
 .add-to-cart-btn {
     width: 100%;
     background: #0aad0a;
     color: white;
+}
+
+.best-selling-card {
+    background-image: url(https://freshcart-next-js-template.netlify.app/images/products/product-img-11.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 440px;
+}
+
+
+.discount-cards {
+    width: 200px;
+}
+
+.discount-cards img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.discount-cards h1 {
+    font-size: .875rem !important;
+}
+
+.discount-cards-content {
+    margin: 0;
+}
+
+.discount-cards-description {
+    color: gray;
+    font-size: .875em;
+    margin-bottom: 8px;
+
 }

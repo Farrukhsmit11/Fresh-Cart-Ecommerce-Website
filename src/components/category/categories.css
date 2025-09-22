@@ -6,9 +6,11 @@ h3 {
 }
 
 .card1 {
-    width: 208px;
+    width: 186px;
     height: 220px;
     text-align: center;
+    display: flex;
+
 
 }
 
@@ -22,11 +24,6 @@ h3 {
 .ant-card-meta {
     display: flex;
     flex-direction: column;
-}
-
-
-.ant-card {
-    width: 208px;
 }
 
 .category-title {

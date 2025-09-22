@@ -1,5 +1,5 @@
 import { SearchOutlined, UserOutlined, HeartOutlined, EnvironmentOutlined } from "@ant-design/icons";
-import { Button, Input, Badge, Modal, Form as AntForm, Space, Drawer, Alert } from "antd";
+import { Button, Input, Badge, Modal, Form as AntForm, Drawer, Alert } from "antd";
 import "./navbar.css";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
@@ -14,11 +14,7 @@ const Navbar = () => {
   const [inputvalue, setinputvalue] = useState("");
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState('right');
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    form.validateFields(["nickname"]);
-  }, [checkNick, form]);
+  const navigate = useNavigate();
 
 
   const handlesubmit = () => {
@@ -33,14 +29,13 @@ const Navbar = () => {
     }
   }
 
-
-  // Signup Cancel
+  // Signup functionality
 
   const signupcancel = () => {
     setOpenSignup(false)
   }
 
-  // location oncancel function
+  // location functionality
 
   const locationOncancel = () => {
     setOpenLocation(false);

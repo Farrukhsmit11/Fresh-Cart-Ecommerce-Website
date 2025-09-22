@@ -2,8 +2,24 @@ import { Card, Avatar, Flex, Rate, Button } from "antd"
 const { Meta } = Card;
 import "./Popularproducts.css"
 import { PlusOutlined } from "@ant-design/icons";
+import { useState } from "react";
 
 const PopularProducts = () => {
+
+    const [DataTosave, setDataTosave] = useState("false");
+
+
+    const handleInputChange = (e) => {
+        setDataTosave(e.target.value);
+    }
+
+
+    const handleSaveClick = () => {
+        localStorage.setItem("myKey", JSON.stringify(DataTosave));
+    }
+
+
+
     const prodctslist = [
         {
 
@@ -114,7 +130,7 @@ const PopularProducts = () => {
                                             <p>{product.price.toFixed(2)}</p>
                                         </div>
                                         <div className="add-to-cart">
-                                            <Button className="add-to-cart-button"><PlusOutlined /> Add</Button>
+                                            <Button onClick={handleSaveClick} className="add-to-cart-button"><PlusOutlined /> Add</Button>
                                         </div>
                                     </Flex>
                                 </Flex>
