@@ -5,11 +5,62 @@
     background-repeat: no-repeat;
     height: 470px;
     width: 345px;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
     left: 0;
     top: 0;
     border-radius: 7px;
 }
+
+
+.cards-content h1 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.cards-rate {
+    font-size: 16px;
+}
+
+
+.rating-main {
+    align-items: center;
+    gap: 86px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cards {
+    height: auto;
+}
+
+
+.card-rate {
+    font-size: 14px;
+}
+
+
+.cart-add-btn {
+    width: 258px;
+    padding: 18px;
+    background-color: #0aad0a;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+.cards-content p {
+    margin-bottom: 12px;
+}
+
+
+.cards-content {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+
 
 .heading-one {
     font-size: 22px;
@@ -18,7 +69,6 @@
 }
 
 .card-overlay {
-    width: 100%;
     position: absolute;
     top: 8%;
     left: 6%;
@@ -43,16 +93,9 @@
 }
 
 .best-sell-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 86px;
+    display: flex;
+    gap: 32px;
     align-items: stretch;
-}
-
-.add-to-cart-btn {
-    width: 100%;
-    background: #0aad0a;
-    color: white;
 }
 
 .best-selling-card {
@@ -65,17 +108,16 @@
 
 
 .discount-cards {
-    width: 200px;
-}
-
-.discount-cards img {
-    max-width: 100%;
-    height: auto;
+    width: 316px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
 }
 
 
 .discount-cards h1 {
-    font-size: .875rem !important;
+    font-size: 11px;
+    font-weight: 600;
 }
 
 .discount-cards-content {
@@ -87,4 +129,72 @@
     font-size: .875em;
     margin-bottom: 8px;
 
+}
+
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+
+}
+
+
+.store-button {
+    margin-bottom: 10px;
+    background: #0aad0a;
+    padding: 19px;
+    color: white;
+    border: none;
+    font-weight: 600;
+    width: 260px;
+    border-radius: 8px;
+}
+
+
+.countdown-wrapper {
+    width: 100%;
+}
+
+p {
+    color: gray;
+
+}
+
+.time-left-wrapper {
+    display: flex;
+    gap: 9px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 13px
+}
+
+
+@media (max-width: 768px) {
+    .best-sell-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+}
+
+
+/* Countdown */
+.countdown-container {
+    display: flex;
+    gap: 34px;
+}
+
+.countdown-box {
+    border: 1px solid var(--fc-gray-300);
+    border-radius: 50%;
 }

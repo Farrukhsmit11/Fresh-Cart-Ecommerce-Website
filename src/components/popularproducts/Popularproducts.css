@@ -12,6 +12,11 @@
 }
 
 
+.products-cards{
+    width: 100%;
+}
+
+
 
 
 
@@ -46,9 +51,10 @@
 }
 
 .product-card-title {
-    font-size: 10px;
+    font-size: 11px;
     margin: 4px 0;
     color: #21313c;
+    font-weight: 600;
 }
 
 .cart-rateing {

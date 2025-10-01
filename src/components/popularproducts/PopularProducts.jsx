@@ -112,29 +112,32 @@ const PopularProducts = () => {
                 <div className="cards-grid">
                     {prodctslist.map((product, index) => {
                         return (
-                            <Card
-                                className="card-two"
-                                key={index}
-                            >
-                                <div className="cards-header">
-                                    <img className="product-image" src={product.imgSrc} />
-                                </div>
-                                <div className="text-content">
-                                    <p className="product-description">{product.description}</p>
-                                    <h1 className="product-card-title">{product.title}</h1>
-                                </div>
-                                <Flex gap="middle" vertical>
-                                    <Flex gap="middle">
-                                        <div className="rating-price">
-                                            <Rate defaultValue={3} className="cart-rateing" />
-                                            <p>{product.price.toFixed(2)}</p>
-                                        </div>
-                                        <div className="add-to-cart">
-                                            <Button onClick={handleSaveClick} className="add-to-cart-button"><PlusOutlined /> Add</Button>
-                                        </div>
+                            <div className="products-cards">
+                                <Card
+                                    className="card-two"
+                                    key={index}
+                                >
+                                    <div className="cards-header">
+                                        <img className="product-image" src={product.imgSrc} />
+                                    </div>
+                                    <div className="text-content">
+                                        <p className="product-description">{product.description}</p>
+                                        <h1 className="product-card-title">{product.title}</h1>
+                                    </div>
+                                    <Flex gap="middle" vertical>
+                                        <Flex gap="middle">
+                                            <div className="rating-price">
+                                                <Rate defaultValue={3} className="cart-rateing" />
+                                                <p>{product.price.toFixed(2)}</p>
+                                            </div>
+                                            <div className="add-to-cart">
+                                                <Button onClick={handleSaveClick} className="add-to-cart-button"><PlusOutlined /> Add</Button>
+                                            </div>
+                                        </Flex>
                                     </Flex>
-                                </Flex>
-                            </Card>
+                                </Card>
+                            </div>
+
                         )
                     })}
                 </div>
