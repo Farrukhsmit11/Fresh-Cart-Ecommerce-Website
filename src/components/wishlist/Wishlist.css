@@ -1,0 +1,33 @@
+.wishlist-heading {
+    margin-bottom: 16px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #21313c;
+    margin-top: 0;
+}
+
+
+.delete-button {
+    background: #0aad0a;
+    color: white;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 600;
+    width: 93px;
+    font-size: 11px;
+}
+
+.delete-icon {
+    font-size: 23px;
+}
+
+
+.table-content {
+    margin-bottom: 2rem;
+}
+
+
+
+.links {
+    margin-top: 21px;
+    margin-bottom: 16px;
+}

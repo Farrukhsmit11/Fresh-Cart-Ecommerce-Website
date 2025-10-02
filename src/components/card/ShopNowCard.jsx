@@ -1,23 +1,8 @@
 import { Button, Col, Row } from 'antd';
-import "./card.css"
+import "./ShopNowCard.css"
+import products from "./Products.json"
 
 const ShopNowCard = () => {
-
-    const products = [
-        {
-            imgSrc: "https://freshcart-next-js-template.netlify.app/images/banner/grocery-banner.png",
-            title: "Fruits & Vegetables",
-            description: "Get up to 30% off"
-        },
-
-
-        {
-            imgSrc: "https://freshcart-next-js-template.netlify.app/images/banner/grocery-banner-2.jpg",
-            title: "Freshly Baked Buns",
-            description: "Get up to 25% off"
-        }
-    ]
-
 
     return (
         <section className='section-padding'>

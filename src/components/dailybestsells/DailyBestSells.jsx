@@ -1,40 +1,9 @@
 import { Button, Card, Rate, Flex } from "antd"
 import "./Dailybestsells.css"
 import { PlusOutlined } from "@ant-design/icons"
-import Countdown from "react-countdown"
+import sells from "./Sells.json"
 
 const DailyBestSells = () => {
-
-    const products = [
-        {
-            id: 1,
-            description: "Coffee and drinks",
-            img: "https://freshcart-next-js-template.netlify.app/images/products/product-img-11.jpg",
-            title: "Roast Ground Coffee",
-            price: 12,
-
-        },
-
-        {
-            id: 2,
-            description: "Fruits & Vegetables",
-            img: "	https://freshcart-next-js-template.netlify.app/images/products/product-img-12.jpg",
-            title: "Crushed Tomatoes",
-            price: "20",
-
-        },
-
-
-        {
-            id: 3,
-            description: "Fruits & Vegetables",
-            img: "https://freshcart-next-js-template.netlify.app/images/products/product-img-13.jpg",
-            title: "Golden Pineapple",
-            price: "15",
-
-        }
-    ]
-
 
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
@@ -60,12 +29,6 @@ const DailyBestSells = () => {
     }
 
 
-
-
-
-
-
-
     return (
         <section className="section-padding">
             <div className="container">
@@ -73,22 +36,16 @@ const DailyBestSells = () => {
                     <h1 className="heading-one">Daily Best Sells</h1>
                 </div>
                 <div className="best-sell-grid">
-
-                    {/* Featured Card big */}
-                    <Card
-                        className="featured-sell-card"
-                        bodyStyle={{ padding: 0, background: "transparent" }}
-                    >
-                        <div className="card-image-wrapper">
-                            <div className="card-overlay ">
-                                <h1 className="title-one">100% Organic Coffee Beans.</h1>
-                                <p className="coffee-card-description">Get the best deal before close.</p>
-                                <Button className="shop-btn">Shop Now</Button>
-                            </div>
+                    <div className="card-image-wrapper">
+                        <div className="background-overlay ">
+                            <h1 className="title-one">100% Organic Coffee Beans.</h1>
+                            <p className="coffee-card-description">Get the best deal before close.</p>
+                            <Button className="shop-btn">Shop Now</Button>
                         </div>
-                    </Card>
+                    </div>
 
-                    {products.map((product, index) => {
+
+                    {sells.map((product, index) => {
                         return (
                             <div className="cards">
                                 <Card key={index}>
@@ -105,13 +62,6 @@ const DailyBestSells = () => {
                                         </Flex>
                                         <div className="buttons">
                                             <Button className="cart-add-btn"> <PlusOutlined /> Add to Cart</Button>
-                                        </div>
-
-                                        <div className="countdown-wrapper">
-                                            <Countdown
-                                                date={Date.now() + 1104 * 24 * 60 * 60 * 1000}
-                                                renderer={renderer}
-                                            />
                                         </div>
                                     </div>
                                 </Card>

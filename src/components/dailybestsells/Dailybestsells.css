@@ -4,12 +4,11 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 470px;
-    width: 345px;
+    min-width: 327px;
     position: relative;
     overflow: hidden;
-    left: 0;
-    top: 0;
     border-radius: 7px;
+    flex: 1;
 }
 
 
@@ -32,7 +31,7 @@
 }
 
 .cards {
-    height: auto;
+    height: 450px
 }
 
 
@@ -68,7 +67,7 @@
     font-weight: 600;
 }
 
-.card-overlay {
+.background-overlay {
     position: absolute;
     top: 8%;
     left: 6%;

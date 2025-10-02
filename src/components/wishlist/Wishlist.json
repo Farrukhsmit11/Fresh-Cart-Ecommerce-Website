@@ -1,0 +1,26 @@
+[
+    {
+        "key": "1",
+        "name": "Fresh Banana",
+        "description": "30kg",
+        "img": "https://freshcart-next-js-template.netlify.app/images/products/product-img-18.jpg",
+        "price": 18.00,
+        "status": "In Stock"
+    },
+    {
+        "key": "2",
+        "name": "Golden Pineapple",
+        "description": "20kg",
+        "img": "https://freshcart-next-js-template.netlify.app/images/products/product-img-13.jpg",
+        "price": "20.00",
+        "status": "out of stock"
+    },
+    {
+        "key": "3",
+        "name": "Fresh kiwi",
+        "description": "10kg",
+        "img": "https://freshcart-next-js-template.netlify.app/images/products/product-img-17.jpg",
+        "price": "21.00",
+        "status": "in stock"
+    }
+]

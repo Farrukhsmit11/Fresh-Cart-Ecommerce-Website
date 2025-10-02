@@ -1,5 +1,5 @@
 
-import "./home.css";
+import "./Home.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,6 +11,7 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import Categories from "../category/Categories";
 import PopularProducts from "../popularproducts/PopularProducts";
 import ShopNowCard from "../card/ShopNowCard";
+import slideData from "./Slide.json"
 
 
 const Home = () => {
@@ -20,23 +21,6 @@ const Home = () => {
         progressCircle.current.style.setProperty('--progress', 1 - progress);
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
-
-
-    const slidesData = [
-        {
-            imgSrc: "https://freshcart-next-js-template.netlify.app/images/slider/slide-1.jpg",
-            title: "SuperMarket For Fresh Grocery",
-            description: "Introduced a new model for online grocery shopping and convenient home delivery.",
-        },
-
-        {
-            imgSrc: "https://freshcart-next-js-template.netlify.app/images/slider/slide-2.jpg",
-            title: "Free Shipping on orders over $100",
-            description: "Free Shipping to First-Time Customers Only, After promotions and discounts are applied",
-        },
-
-    ]
-
 
 
 
@@ -59,7 +43,7 @@ const Home = () => {
                     onAutoplayTimeLeft={onAutoplayTimeLeft}
                     className="mySwiper"
                 >
-                    {slidesData.map((slide, index) => (
+                    {slideData.map((slide, index) => (
                         <SwiperSlide key={index}>
                             <div className="slide-wrapper">
                                 <img className="slide-image" src={slide.imgSrc} />

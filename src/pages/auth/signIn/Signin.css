@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.fresh-cart-banner nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 38px;
+    box-shadow: var(--fc-box-shadow-sm) !important;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+.logo img {
+    height: 40px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Sign in Form */
+
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 16px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+
+
+
+
+h1 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 8px;
+    letter-spacing: -.03rem;
+}
+
+.password-input,
+.email-input {
+    padding: 11px 17px;
+    border-radius: 10px;
+}
+
+
+.form-description {
+    color: gray;
+    margin-bottom: 27px;
+    font-size: 15px;
+}
+
+
+.sign-in-btn {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #0aad0a;
+    font-weight: 700;
+}
+
+
+.tick-select-btn {
+    margin-bottom: 20px;
+}
+
+
+.form-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

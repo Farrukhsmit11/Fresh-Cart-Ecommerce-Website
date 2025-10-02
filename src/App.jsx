@@ -1,15 +1,10 @@
-import Loading from "./components/loader/Loading";
+import Loader from "./components/loader/Loader"
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
-import ImageSlider from "./components/home/Home";
-import Categories from "./components/category/Categories";
-import PopularProducts from "./components/popularproducts/PopularProducts";
 import { Route, Routes } from "react-router-dom";
-import Signin from "./pages/auth/sign in/Signin";
 import Home from "./components/home/Home";
 import Footer from "./components/footer/Footer";
-import ShopNowCard from "./components/card/ShopNowCard";
-import DailyBestSells from "./components/dailybestsells/DailyBestSells";
+import Wishlist from "./components/wishlist/Wishlist";
 
 
 function App() {
@@ -22,7 +17,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <Loader />;
   }
 
   return (
@@ -30,12 +25,13 @@ function App() {
       {location.pathname !== "/signin" && <Navbar />}
 
       <Routes>
+        <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/signin" element={<Signin />}></Route>
       </Routes>
 
 
-      <DailyBestSells />
+
+      {/* <DailyBestSells /> */}
       <Footer />
 
     </>

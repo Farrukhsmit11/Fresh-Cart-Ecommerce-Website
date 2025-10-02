@@ -1,10 +1,13 @@
 import { SearchOutlined, UserOutlined, HeartOutlined, EnvironmentOutlined } from "@ant-design/icons";
 import { Button, Input, Badge, Modal, Form as AntForm, Drawer, Alert } from "antd";
-import "./navbar.css";
+import "./Navbar.css";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
+import Wishlist from "../wishlist/Wishlist";
+import Home from "../home/Home"
+
 
 const Navbar = () => {
   const [form] = AntForm.useForm();
@@ -59,6 +62,14 @@ const Navbar = () => {
   };
 
 
+
+  // navigate to wihslist on same page function
+
+  const navigatetowishlist = () => {
+    navigate("/Wishlist");
+  }
+
+
   return (
     <div className="nav-container">
       <Toaster />
@@ -66,6 +77,8 @@ const Navbar = () => {
         <div className="logo">
           <img
             className="cart-logo"
+
+
             src="https://freshcart-next-js-template.netlify.app/images/logo/freshcart-logo.svg"
             alt="Fresh Cart Logo"
           />
@@ -92,7 +105,7 @@ const Navbar = () => {
       <div className="nav-right">
         <div className="nav-icons">
           <Badge count={5}>
-            <HeartOutlined style={{ fontSize: "24px", color: "#5c6c75" }} />
+            <HeartOutlined style={{ fontSize: "24px", color: "#5c6c75" }} onClick={navigatetowishlist} />
           </Badge>
           <UserOutlined
             onClick={() => setOpenSignup(true)}
