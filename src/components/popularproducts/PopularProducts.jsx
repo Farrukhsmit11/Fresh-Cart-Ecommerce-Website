@@ -1,14 +1,13 @@
-import { Card, Avatar, Flex, Rate, Button } from "antd"
+import { Card } from "antd"
 const { Meta } = Card;
-import "./Popularproducts.css"
-import { PlusOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import "./PopularProducts.css"
 import Productlist from "./Productlist.json"
+import { useState } from "react";
+import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
 
 const PopularProducts = () => {
 
     const [DataTosave, setDataTosave] = useState("false");
-
 
     const handleInputChange = (e) => {
         setDataTosave(e.target.value);
@@ -18,11 +17,20 @@ const PopularProducts = () => {
     return (
         <section className="section-padding">
             <div className="container">
-                <div className="row">
-                    <h1 className="product-header-title">Popular Products</h1>
-                </div>
 
-                <div className="cards-grid">
+
+                <CardsWrapper
+                    data={Productlist}
+                />
+
+
+
+                {/* <div className="row"> */}
+                {/* <h1 className="product-header-title">Popular Products</h1> */}
+                {/* </div> */}
+
+
+                {/* <div className="cards-grid">
                     {Productlist.map((product, index) => {
                         return (
                             <div className="products-cards">
@@ -52,7 +60,7 @@ const PopularProducts = () => {
                             </div>
                         )
                     })}
-                </div>
+                </div> */}
             </div>
         </section>
 

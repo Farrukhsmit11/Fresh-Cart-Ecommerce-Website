@@ -1,5 +1,5 @@
 import { Button, Card, Rate, Flex } from "antd"
-import "./Dailybestsells.css"
+import "./DailyBestSells.css"
 import { PlusOutlined } from "@ant-design/icons"
 import sells from "./Sells.json"
 

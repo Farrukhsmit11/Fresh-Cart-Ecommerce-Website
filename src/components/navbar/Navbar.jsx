@@ -1,42 +1,23 @@
-import { SearchOutlined, UserOutlined, HeartOutlined, EnvironmentOutlined } from "@ant-design/icons";
+import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Input, Badge, Modal, Form as AntForm, Drawer, Alert } from "antd";
 import "./Navbar.css";
-import { useEffect, useState } from "react";
-import toast, { Toaster } from 'react-hot-toast';
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Toaster } from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
-import Wishlist from "../wishlist/Wishlist";
-import Home from "../home/Home"
+import LoginModal from "../../pages/auth/loginModal/LoginModal";
 
 
 const Navbar = () => {
   const [form] = AntForm.useForm();
   const [openLocation, setOpenLocation] = useState(false);
-  const [openSignup, setOpenSignup] = useState(false);
   const [checkNick, setCheckNick] = useState(false);
   const [inputvalue, setinputvalue] = useState("");
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState('right');
   const navigate = useNavigate();
+  const [IsloginModdal, setIsloginModdal] = useState(false);
 
-
-  const handlesubmit = () => {
-    toast.success("Form submitted sucessfully");
-    setOpenSignup(false);
-    form.resetFields();
-  }
-
-  const onFinishFailed = () => {
-    if (inputvalue.trim() === "") {
-      toast.error("Input field cannot be empty");
-    }
-  }
-
-  // Signup functionality
-
-  const signupcancel = () => {
-    setOpenSignup(false)
-  }
 
   // location functionality
 
@@ -44,9 +25,7 @@ const Navbar = () => {
     setOpenLocation(false);
   }
 
-  const Signinavigate = () => {
-    navigate("/signin");
-  };
+
 
 
   // Drawer Functionality
@@ -61,8 +40,7 @@ const Navbar = () => {
     setOpen(false);
   };
 
-
-
+  
   // navigate to wihslist on same page function
 
   const navigatetowishlist = () => {
@@ -77,8 +55,6 @@ const Navbar = () => {
         <div className="logo">
           <img
             className="cart-logo"
-
-
             src="https://freshcart-next-js-template.netlify.app/images/logo/freshcart-logo.svg"
             alt="Fresh Cart Logo"
           />
@@ -107,10 +83,12 @@ const Navbar = () => {
           <Badge count={5}>
             <HeartOutlined style={{ fontSize: "24px", color: "#5c6c75" }} onClick={navigatetowishlist} />
           </Badge>
+
           <UserOutlined
-            onClick={() => setOpenSignup(true)}
+            onClick={() => setIsloginModdal(true)}
             style={{ fontSize: "24px", color: "#5c6c75" }}
           />
+
           <FaCartArrowDown onClick={showDrawer} className="nav-cart-icon" />
           <Drawer
             title={
@@ -150,102 +128,11 @@ const Navbar = () => {
         <Input placeholder="Enter your address" className="location-input" />
       </Modal>
 
+      <LoginModal
+        isOpenSignupModal={IsloginModdal}
+        setIsOpenSignupModal={setIsloginModdal}
+      />
 
-      {/* Signup Modal */}
-      <Modal
-        open={openSignup}
-        title="Sign Up"
-        onCancel={() => {
-          signupcancel();
-          setOpenSignup(false);
-          form.resetFields();
-        }}
-        footer={null}
-        className="signup-modal"
-      >
-
-        <div className="signup-content">
-          <AntForm
-            form={form}
-            name="register"
-            layout="vertical"
-            style={{ maxWidth: 600 }}
-            scrollToFirstError
-            className="signup-form"
-            onFinish={handlesubmit}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-          >
-
-            <AntForm.Item
-              name="username"
-              label="Name"
-              rules={[{ required: true, message: "Enter your Name" },
-              { type: "username", message: "Please enter valid email" }
-              ]}
-
-              hasFeedback
-            >
-              <Input className="name-input" placeholder="Enter your Name" />
-            </AntForm.Item>
-
-            <AntForm.Item
-              name="email"
-              label="Email Address"
-              rules={[
-                { required: true, message: "Please input your email address!" },
-                { type: "email", message: "Please enter valid email" },
-              ]}
-              hasFeedback
-            >
-              <Input
-                placeholder="Enter your Email Address"
-                className="email-input"
-                type="email"
-              />
-            </AntForm.Item>
-
-
-            <AntForm.Item
-              name="password"
-              label="Password"
-              rules={[
-                { required: true, message: "Please enter your password" },
-                { type: "password", min: 6, message: "Password must be at least 6 characters" },
-              ]}
-              hasFeedback
-            >
-              <Input.Password
-                placeholder="Enter your password"
-                className="email-input"
-              />
-            </AntForm.Item>
-
-
-            <div className="agree-to-terms">
-              <p>
-                By Signup, you agree to <a href="">Terms and Services</a> &{" "}
-                <a href="">Privacy Policy</a>
-              </p>
-            </div>
-
-
-            <div className="submit-buttons">
-              <Button type="primary" htmlType="submit" className="signup-button">
-                Sign Up
-              </Button>
-            </div>
-
-            <div className="account-sign-in">
-              <p className="sign-in-title" onClick={() => {
-                window.location.href = "/signin";
-              }}>
-                Already have an account? <Link to={"/signin"}>Sign in</Link>
-              </p>
-            </div>
-          </AntForm>
-        </div>
-      </Modal>
     </div >
   );
 };

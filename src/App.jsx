@@ -2,9 +2,10 @@ import Loader from "./components/loader/Loader"
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/home/Home";
+import HeroCards from "./components/heroCards/HeroCards"
 import Footer from "./components/footer/Footer";
 import Wishlist from "./components/wishlist/Wishlist";
+import SignIn from "./pages/auth/signIn/Signin"
 
 
 function App() {
@@ -26,9 +27,9 @@ function App() {
 
       <Routes>
         <Route path="/wishlist" element={<Wishlist />}></Route>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/signIn" element={<SignIn />}></Route>
+        <Route path="/" element={<HeroCards />}></Route>
       </Routes>
-
 
 
       {/* <DailyBestSells /> */}
