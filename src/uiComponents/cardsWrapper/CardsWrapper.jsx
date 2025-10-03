@@ -27,7 +27,6 @@ const CardsWrapper = ({ data = [], title = '' }) => {
                       <p>{item.description}</p>
                     </Card>
                   </div>
-
                 )
               })}
             </div>

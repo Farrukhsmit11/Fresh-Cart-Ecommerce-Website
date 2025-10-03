@@ -1,5 +1,5 @@
-import { Badge, Button, Checkbox, Form, Input, Layout } from "antd"
-import "./Signin.css"
+import { Button, Checkbox, Form, Input } from "antd"
+import "../../../pages/auth/Auth.css"
 import { Link } from "react-router-dom";
 
 const Signin = () => {
@@ -19,7 +19,6 @@ const Signin = () => {
             range: '${label} must be between ${min} and ${max}',
         },
     };
-
 
     const onFinish = values => {
         console.log(values);
@@ -47,56 +46,64 @@ const Signin = () => {
             </div>
 
 
-            <div className="signin-container">
-                <div className="content row">
-                    <img src="https://freshcart-next-js-template.netlify.app/images/svg-graphics/signin-g.svg" />
-                    <div className="sign-in-form">
-                        <h1>Sign in to FreshCart</h1>
-                        <p className="form-description">Welcome back to FreshCart! Enter your email to get started.</p>
-                        <Form
-                            layout="vertical"
-                            form={form}
-                            name="nest-messages"
-                            onFinish={onFinish}
-                            style={{ maxWidth: 450 }}
-                            validateMessages={validateMessages}
-                        >
-                            <Form.Item
-                                name={['user', 'email']}
-                                rules={[{ type: "email", required: true, message: "Please enter email Address" }]}>
-                                <Input className="email-input" placeholder="Email" autoComplete="off" />
-                            </Form.Item>
+            <div className="container">
+                <div className="auth-wrapper">
+                    <div className="auth-wrapper-eft">
+                        <img src="https://freshcart-next-js-template.netlify.app/images/svg-graphics/signin-g.svg" />
+                    </div>
 
-                            <Form.Item
-                                name="password"
-                                rules={[{ required: true, message: 'Please input your Password!' }]}
-                                hasFeedback
+
+                    <div className="auth-wrapper-right">
+                        <div className="sign-in-form">
+                            <h1>Sign in to FreshCart</h1>
+                            <p className="form-description">Welcome back to FreshCart! Enter your email to get started.</p>
+
+                            <Form
+                                layout="vertical"
+                                form={form}
+                                name="nest-messages"
+                                onFinish={onFinish}
+                                style={{ maxWidth: 450 }}
+                                validateMessages={validateMessages}
+                                className="signIn-form"
                             >
-                                <Input.Password className="password-input" type="password" placeholder="*****" />
-                            </Form.Item>
+                                <Form.Item
+                                    name={['user', 'email']}
+                                    rules={[{ type: "email", required: true, message: "Please enter email Address" }]}>
+                                    <Input className="email-input" placeholder="Email" autoComplete="off" />
+                                </Form.Item>
+
+                                <Form.Item
+                                    name="password"
+                                    rules={[{ required: true, message: 'Please input your Password!' }]}
+                                    hasFeedback
+                                >
+                                    <Input.Password className="password-input" type="password" placeholder="*****" />
+                                </Form.Item>
 
 
-                            <div className="form-content">
-                                <Checkbox className="tick-select-btn">Remember me </Checkbox>
+                                <div className="chekbox-main">
+                                    <Checkbox className="tick-select-btn">Remember me </Checkbox>
+                                    <div className="forgot-password">
+                                        <p className="form-description">Forgot Password?
+                                            <Link to={"/"}>Reset it</Link>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <Form.Item label={null}>
+                                    <Button className="sign-in-btn" type="primary" htmlType="submit" block>
+                                        Sign In
+                                    </Button>
+                                </Form.Item>
+
                                 <div className="forgot-password">
-                                    <p className="form-description">Forgot Password?
-                                        <Link to={"/"}>Reset it</Link>
+                                    <p className="form-description">Dont have an account?
+                                        <Link to={"/"}>Sign Up</Link>
                                     </p>
                                 </div>
-                            </div>
-
-                            <Form.Item label={null}>
-                                <Button className="sign-in-btn" type="primary" htmlType="submit" block>
-                                    Sign In
-                                </Button>
-                            </Form.Item>
-
-                            <div className="forgot-password">
-                                <p className="form-description">Dont have an account?
-                                    <Link to={"/"}>Sign Up</Link>
-                                </p>
-                            </div>
-                        </Form>
+                            </Form>
+                        </div>
                     </div>
                 </div>
             </div>
