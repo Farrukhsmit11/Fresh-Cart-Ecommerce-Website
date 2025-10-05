@@ -1,0 +1,133 @@
+[
+    {
+        "key": "sub1",
+        "label": "Dairy, Bread & Eggs",
+        "children": [
+            {
+                "key": "g1",
+                "label": "Milk Products",
+                "type": "group",
+                "children": [
+                    {
+                        "key": "1",
+                        "label": "Milk"
+                    },
+                    {
+                        "key": "2",
+                        "label": "Butter"
+                    }
+                ]
+            },
+            {
+                "key": "g2",
+                "label": "Bakery Items",
+                "type": "group",
+                "children": [
+                    {
+                        "key": "3",
+                        "label": "Bread"
+                    },
+                    {
+                        "key": "4",
+                        "label": "Eggs"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "key": "sub2",
+        "label": "Snacks & Munchies",
+        "children": [
+            {
+                "key": "5",
+                "label": "Chips"
+            },
+            {
+                "key": "6",
+                "label": "Namkeen"
+            },
+            {
+                "key": "sub3",
+                "label": "Chocolates & Candies",
+                "children": [
+                    {
+                        "key": "7",
+                        "label": "Chocolate Bars"
+                    },
+                    {
+                        "key": "8",
+                        "label": "Candy"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "divider"
+    },
+    {
+        "key": "sub4",
+        "label": "Fruits & Vegetables",
+        "children": [
+            {
+                "key": "9",
+                "label": "Fresh Fruits"
+            },
+            {
+                "key": "10",
+                "label": "Fresh Vegetables"
+            },
+            {
+                "key": "11",
+                "label": "Organic Produce"
+            },
+            {
+                "key": "12",
+                "label": "Herbs"
+            }
+        ]
+    },
+    {
+        "key": "sub4",
+        "label": "Coldrinks & Juices",
+        "children": [
+            {
+                "key": "9",
+                "label": "Juice"
+            },
+            {
+                "key": "10",
+                "label": "Pepsi"
+            }
+        ]
+    },
+    {
+        "key": "sub4",
+        "label": "Breakfast & Instant food",
+        "children": [
+            {
+                "key": "9",
+                "label": "Juice"
+            },
+            {
+                "key": "10",
+                "label": "Pepsi"
+            }
+        ]
+    },
+    {
+        "key": "sub4",
+        "label": "Bakery & Biscuits",
+        "children": [
+            {
+                "key": "9",
+                "label": "Juice"
+            },
+            {
+                "key": "10",
+                "label": "Pepsi"
+            }
+        ]
+    }
+]

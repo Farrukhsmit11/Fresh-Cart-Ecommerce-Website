@@ -1,3 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.popular-cards-main {
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+
 .item-title {
     font-size: 17px;
 }
@@ -11,20 +25,42 @@
     width: 246px;
 }
 
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.cards-rate {
+    font-size: 16px;
 }
+
+
+.add-to-cart {
+    display: flex;
+    align-items: center;
+    gap: 51px;
+}
+
+
+.add-to-cart-btn {
+    width: 82px;
+    background: #0aad0a;
+    color: white;
+    font-weight: 600;
+    font-family: "Plus Jakarta Sans";
+}
+
 
 
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    gap: 20px;
 }
 
 
+.card-heading {
+    font-size: 27px;
+    margin-bottom: 31px;
+    font-weight: 600;
+}
+
+/* 
 .products-cards {
     width: 100%;
 }

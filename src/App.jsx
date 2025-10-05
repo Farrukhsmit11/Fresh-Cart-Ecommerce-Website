@@ -6,6 +6,7 @@ import HeroCards from "./components/heroCards/HeroCards"
 import Footer from "./components/footer/Footer";
 import Wishlist from "./components/wishlist/Wishlist";
 import SignIn from "./pages/auth/signIn/Signin"
+import CategoryDetail from "./pages/categorydetail/CategoryDetail";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
         <Route path="/" element={<HeroCards />}></Route>
+        <Route path="/categorydetail" element={<CategoryDetail />}></Route>
       </Routes>
 
 

@@ -45,9 +45,10 @@ const DailyBestSells = () => {
                     </div>
 
 
-                    {sells.map((product, index) => {
+                    {SellsData.map((product, index) => {
                         return (
                             <div className="cards">
+                               
                                 <Card key={index}>
                                     <div className="cards-content">
                                         <img src={product.img} />
