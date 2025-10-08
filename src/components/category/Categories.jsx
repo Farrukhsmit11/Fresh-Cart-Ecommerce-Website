@@ -18,8 +18,6 @@ const Categories = () => {
         navigate("/categorydetail");
     }
 
-
-
     return (
         <section className="section-padding">
             <div className="container">
@@ -43,7 +41,7 @@ const Categories = () => {
                                 <Card
                                     className="card1"
                                     onClick={navigatedDetailpage}
-                                
+
                                 >
                                     <Meta
                                         avatar={<img className="" src={item.imgSrc} alt={item.title} />}

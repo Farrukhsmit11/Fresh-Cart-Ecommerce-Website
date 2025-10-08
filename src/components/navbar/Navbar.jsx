@@ -1,35 +1,25 @@
 import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Input, Badge, Modal, Form as AntForm, Drawer, Alert } from "antd";
+import { Button, Input, Badge, Form as AntForm, Drawer, Alert } from "antd";
 import "./Navbar.css";
 import { useState } from "react";
 import { Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 import LoginModal from "../../pages/auth/loginModal/LoginModal";
-
+import LocationModal from "../locationModal/LocationModal"
 
 const Navbar = () => {
   const [form] = AntForm.useForm();
-  const [openLocation, setOpenLocation] = useState(false);
   const [checkNick, setCheckNick] = useState(false);
   const [inputvalue, setinputvalue] = useState("");
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState('right');
   const navigate = useNavigate();
   const [IsloginModdal, setIsloginModdal] = useState(false);
-
-
-  // location functionality
-
-  const locationOncancel = () => {
-    setOpenLocation(false);
-  }
-
-
+  const [IslocationModal, setIslocationModal] = useState(false);
 
 
   // Drawer Functionality
-
   const showDrawer = () => {
     setOpen(true);
   };
@@ -40,7 +30,7 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  
+
   // navigate to wihslist on same page function
 
   const navigatetowishlist = () => {
@@ -69,7 +59,7 @@ const Navbar = () => {
           className="search-input"
         />
         <Button
-          onClick={() => setOpenLocation(true)}
+          onClick={() => setIslocationModal(true)}
           type="primary"
           className="location-btn"
         >
@@ -111,29 +101,17 @@ const Navbar = () => {
         </div>
       </div>
 
-
-      {/* Location Modal */}
-      <Modal
-        title="Choose your delivery location"
-        open={openLocation}
-        footer={null}
-        className="location-modal"
-        onCancel={() => {
-          locationOncancel();
-          setOpenLocation(false);
-          form.resetFields();
-        }}
-      >
-        <p>Enter your address and we will specify the offer you area.</p>
-        <Input placeholder="Enter your address" className="location-input" />
-      </Modal>
-
       <LoginModal
         isOpenSignupModal={IsloginModdal}
         setIsOpenSignupModal={setIsloginModdal}
       />
 
-    </div >
+      <LocationModal
+        IslocationModal={IslocationModal}
+        setIslocationModal={setIslocationModal}
+      />
+      
+    </div>
   );
 };
 

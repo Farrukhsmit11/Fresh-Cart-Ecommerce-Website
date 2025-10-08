@@ -1,8 +1,7 @@
-import { Card } from "antd"
-const { Meta } = Card;
 import "./PopularProducts.css"
 import Productlist from "./Productlist.json"
 import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
+
 
 const PopularProducts = () => {
 
