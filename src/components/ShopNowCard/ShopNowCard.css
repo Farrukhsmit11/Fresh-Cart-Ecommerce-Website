@@ -30,14 +30,6 @@ p {
 }
 
 
-.shop-now-btn {
-    padding: 22px;
-    background: #001e2b;
-    color: white;
-    border-radius: 10px;
-    width: 105px;
-}
-
 @media (min-width: 768px) {
     .col-md-6 {
         flex: 0 0 auto;

@@ -1,7 +1,7 @@
 import { Button, Card, Rate, Flex } from "antd"
 import "./DailyBestSells.css"
 import { PlusOutlined } from "@ant-design/icons"
-import sells from "./Sells.json"
+import SellsData from "./SellsData.json"
 
 const DailyBestSells = () => {
 
@@ -48,7 +48,6 @@ const DailyBestSells = () => {
                     {SellsData.map((product, index) => {
                         return (
                             <div className="cards">
-                               
                                 <Card key={index}>
                                     <div className="cards-content">
                                         <img src={product.img} />

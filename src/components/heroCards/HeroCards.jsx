@@ -6,13 +6,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useRef } from "react";
-import { Button } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
-import Categories from "../category/Categories";
-import PopularProducts from "../popularproducts/PopularProducts";
-import ShopNowCard from "../ShopNowCard/ShopNowCard";
 import slideData from "./Slide.json"
-
+import CButton from "../../uiComponents/cButton/CButton";
+import "../../uiComponents/cButton/CButton.css"
 
 const HeroCards = () => {
     const progressCircle = useRef(null);
@@ -51,7 +47,7 @@ const HeroCards = () => {
                                     {/* <span className="badge">{slide.Badge}</span> */}
                                     <h1 className="grocery-title" style={{ fontWeight: 'bold', marginTop: '16px' }}>{slide.title}</h1>
                                     <p className="slide-description">{slide.description}</p>
-                                    <Button className="show-now-btn">Show Now  <ArrowRightOutlined /></Button>
+                                    <CButton />
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -63,10 +59,6 @@ const HeroCards = () => {
                         <span ref={progressContent}></span>
                     </div>
                 </Swiper>
-
-                <Categories />
-                <ShopNowCard />
-                <PopularProducts />
             </div >
         </section>
 

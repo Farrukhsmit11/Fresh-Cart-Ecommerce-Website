@@ -1,6 +1,8 @@
-import { Button, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 import "./ShopNowCard.css"
 import products from "./Products.json"
+import ShopNowBtn from '../../uiComponents/cButton/CButton';
+
 
 const ShopNowCard = () => {
 
@@ -18,7 +20,7 @@ const ShopNowCard = () => {
                                             <div className="overlay">
                                                 <h1 className='product-title'>{product.title}</h1>
                                                 <p className='product-card-description'>{product.description}</p>
-                                                <Button className="shop-now-btn">Shop Now </Button>
+                                                <ShopNowBtn />
                                             </div>
                                         </div>
                                     </Col>

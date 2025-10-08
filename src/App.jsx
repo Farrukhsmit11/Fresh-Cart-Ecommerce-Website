@@ -1,12 +1,8 @@
 import Loader from "./components/loader/Loader"
 import { useEffect, useState } from "react";
-import Navbar from "./components/navbar/Navbar";
-import { Route, Routes } from "react-router-dom";
-import HeroCards from "./components/heroCards/HeroCards"
-import Footer from "./components/footer/Footer";
-import Wishlist from "./components/wishlist/Wishlist";
-import SignIn from "./pages/auth/signIn/Signin"
-import CategoryDetail from "./pages/categorydetail/CategoryDetail";
+import Navbar from "./components/navbar/Navbar"
+import Footer from "./components/footer/Footer"
+import AppRoutes from "./routes/appRoutes/AppRoutes"
 
 
 function App() {
@@ -25,16 +21,8 @@ function App() {
   return (
     <>
       {location.pathname !== "/signin" && <Navbar />}
-
-      <Routes>
-        <Route path="/wishlist" element={<Wishlist />}></Route>
-        <Route path="/signIn" element={<SignIn />}></Route>
-        <Route path="/" element={<HeroCards />}></Route>
-        <Route path="/categorydetail" element={<CategoryDetail />}></Route>
-      </Routes>
-
-
-      {/* <DailyBestSells /> */}
+      
+      <AppRoutes />
       <Footer />
 
     </>
