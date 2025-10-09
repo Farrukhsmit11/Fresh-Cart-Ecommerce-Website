@@ -11,7 +11,7 @@ import CButton from "../../uiComponents/cButton/CButton";
 import "../../uiComponents/cButton/CButton.css"
 import Categories from "../../components/category/Categories"
 import DailyBestSells from "../../components/dailybestsells/DailyBestSells"
-import PopularProducts from "../../components/popularProducts/PopularProducts"
+
 
 const HeroCards = () => {
     const progressCircle = useRef(null);
@@ -67,13 +67,8 @@ const HeroCards = () => {
 
 
             <Categories />
-            <PopularProducts />
             <DailyBestSells />
-            
         </>
-
-
-
     )
 }
 

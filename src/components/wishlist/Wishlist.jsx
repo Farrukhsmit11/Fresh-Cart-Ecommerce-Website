@@ -10,12 +10,10 @@ const Wishlist = () => {
     const [selectionType, setSelectionType] = useState("checkbox");
     const [data, setData] = useState(Wishlistdata);
 
-
     const handleDelete = (key) => {
         const newData = data.filter((item) => item.key !== key);
         setData(newData);
         toast.success('Product deleted successfully!');
-        console.log(newData);
     };
 
 

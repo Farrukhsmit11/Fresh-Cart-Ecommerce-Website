@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const LocationModal = ({ isOpenLocationModal, setisLocationModal }) => {
 
-
     const [openlocationModal, setopenlocationModal] = useState(false)
 
     const Oncancel = () => {

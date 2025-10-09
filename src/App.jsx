@@ -1,14 +1,9 @@
 import Loader from "./components/loader/Loader"
 import { useEffect, useState } from "react";
-import Navbar from "./components/navbar/Navbar"
-import Footer from "./components/footer/Footer"
 import { Route, Routes } from "react-router-dom"
 import SignIn from "./pages/auth/signIn/SignIn"
-import HeroCards from "./components/heroCards/HeroCards"
-import Wishlist from "./components/wishlist/Wishlist"
+import { Navbar, Footer, HeroCards , Wishlist , Popularproducts } from "./components";
 import CategoryDetail from "./pages/categoryDetail/CategoryDetail"
-
-
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -25,6 +20,7 @@ function App() {
 
   return (
     <>
+
       {location.pathname !== "/signin" && <Navbar />}
 
       <Routes>
@@ -35,9 +31,11 @@ function App() {
       </Routes>
 
 
-
+      <Popularproducts />
       <Footer />
+
     </>
+
   );
 }
 

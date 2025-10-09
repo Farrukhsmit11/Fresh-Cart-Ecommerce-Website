@@ -4,7 +4,6 @@ import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
 
 
 const PopularProducts = () => {
-
     return (
         <section className="section-padding">
             <div className="container">

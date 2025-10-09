@@ -4,8 +4,6 @@ import "./CategoryDetail.css"
 import { Content } from "antd/es/layout/layout";
 import Menuitems from "./Menuitems.json"
 import { useState } from "react";
-import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper"
-import Productlist from "../../components/popularProducts/Productlist.json"
 
 const CategoryDetail = () => {
 
@@ -76,9 +74,7 @@ const CategoryDetail = () => {
                                     </Space>
                                 </div>
                             </div>
-                            <div className="products-grid">
-                                <CardsWrapper data={Productlist} title="" />
-                            </div>
+                           
                         </Content>
                     </Layout>
                 </div>

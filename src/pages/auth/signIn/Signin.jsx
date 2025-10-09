@@ -52,10 +52,9 @@ const Signin = () => {
                         <img src="https://freshcart-next-js-template.netlify.app/images/svg-graphics/signin-g.svg" />
                     </div>
 
-
                     <div className="auth-wrapper-right">
                         <div className="sign-in-form">
-                            <h1>Sign in to FreshCart</h1>
+                            <h1 className="sign-in-heading">Sign in to FreshCart</h1>
                             <p className="form-description">Welcome back to FreshCart! Enter your email to get started.</p>
 
                             <Form

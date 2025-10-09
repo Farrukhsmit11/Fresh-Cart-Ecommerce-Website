@@ -7,17 +7,26 @@ import { useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 import LoginModal from "../../pages/auth/loginModal/LoginModal";
 import LocationModal from "../locationModal/LocationModal"
+// import useCart from "../../components/cardContext/CardContext"
 
 const Navbar = () => {
   const [form] = AntForm.useForm();
-  const [checkNick, setCheckNick] = useState(false);
-  const [inputvalue, setinputvalue] = useState("");
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState('right');
-  const navigate = useNavigate();
   const [IsloginModdal, setIsloginModdal] = useState(false);
   const [IslocationModal, setIslocationModal] = useState(false);
 
+  const [isDrawerOpen, setisDrawerOpen] = useState(false)
+
+
+  // const { cartItems } = useCart()
+
+  const toggleDrawer = () => {
+    setisDrawerOpen(isDrawerOpen)
+  }
+
+
+  const navigate = useNavigate();
 
   // Drawer Functionality
   const showDrawer = () => {
@@ -29,6 +38,7 @@ const Navbar = () => {
   const onClose = () => {
     setOpen(false);
   };
+
 
 
   // navigate to wihslist on same page function
@@ -79,40 +89,43 @@ const Navbar = () => {
             style={{ fontSize: "24px", color: "#5c6c75" }}
           />
 
-          <FaCartArrowDown onClick={showDrawer} className="nav-cart-icon" />
-          <Drawer
-            title={
-              <div>
-                <div style={{ fontSize: "18px", fontWeight: "bold" }}>
-                  Shop Cart
-                </div>
-                <div style={{ fontSize: "14px", color: "gray" }}>
-                  Location in 382480
-                </div>
-              </div>
-            }
-            placement={placement}
-            width={500}
-            onClose={onClose}
-            open={open}
-          >
-            <Alert message="You’ve got FREE delivery. Start checkout now!" type="success" />
-          </Drawer>
-        </div>
+
+
+
+              <FaCartArrowDown onClick={showDrawer} className="nav-cart-icon" />
+              <Drawer
+                title={
+                  <div>
+                    <div style={{ fontSize: "18px", fontWeight: "bold" }}>
+                      Shop Cart
+                    </div>
+                    <div style={{ fontSize: "14px", color: "gray" }}>
+                      Location in 382480
+                    </div>
+                  </div>
+                }
+                placement={placement}
+                width={500}
+                onClose={onClose}
+                open={open}
+              >
+                <Alert message="You’ve got FREE delivery. Start checkout now!" type="success" />
+              </Drawer>
+            </div>
       </div>
 
-      <LoginModal
-        isOpenSignupModal={IsloginModdal}
-        setIsOpenSignupModal={setIsloginModdal}
-      />
+        <LoginModal
+          isOpenSignupModal={IsloginModdal}
+          setIsOpenSignupModal={setIsloginModdal}
+        />
 
-      <LocationModal
-        IslocationModal={IslocationModal}
-        setIslocationModal={setIslocationModal}
-      />
-      
-    </div>
-  );
+        <LocationModal
+          IslocationModal={IslocationModal}
+          setIslocationModal={setIslocationModal}
+        />
+
+      </div>
+      );
 };
 
-export default Navbar;
+      export default Navbar;

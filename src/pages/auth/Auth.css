@@ -26,7 +26,6 @@ p {
     margin-bottom: 1rem;
 }
 
-
 /* Sign in Form */
 
 .auth-wrapper {
@@ -86,11 +85,19 @@ h1 {
 }
 
 
+.sign-in-heading{
+    font-weight: 700;
+    font-size: 26px;
+}
+
+
 .chekbox-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+
 
 
 /* /* login css code */
@@ -173,4 +180,7 @@ h1 {
     border: 1px solid #dfe2e1;
     border-radius: 9px;
     padding: 6px;
+    width: 100%;
+    padding: .55rem 1rem;
+    color: #21313c;
 }
