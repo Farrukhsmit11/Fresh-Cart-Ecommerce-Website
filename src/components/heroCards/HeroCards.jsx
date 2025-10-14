@@ -10,7 +10,7 @@ import slideData from "./Slide.json"
 import CButton from "../../uiComponents/cButton/CButton";
 import "../../uiComponents/cButton/CButton.css"
 import Categories from "../../components/category/Categories"
-import DailyBestSells from "../../components/dailybestsells/DailyBestSells"
+import Footer from "../footer/Footer";
 
 
 const HeroCards = () => {
@@ -67,7 +67,7 @@ const HeroCards = () => {
 
 
             <Categories />
-            <DailyBestSells />
+            <Footer />
         </>
     )
 }

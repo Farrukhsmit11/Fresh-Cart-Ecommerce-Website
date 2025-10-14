@@ -3,11 +3,13 @@ import { Button, Input, Modal, Form as AntForm } from "antd";
 import "../../../pages/auth/Auth.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const LoginModal = ({ isOpenSignupModal, setIsOpenSignupModal }) => {
 
     const [form] = AntForm.useForm();
     const [openSignup, setOpenSignup] = useState(false);
+    const [inputValue, setinputValue] = useState(false)
 
     const signupcancel = () => {
         setOpenSignup(false)
@@ -20,7 +22,7 @@ const LoginModal = ({ isOpenSignupModal, setIsOpenSignupModal }) => {
     }
 
     const onFinishFailed = () => {
-        if (inputvalue.trim() === "") {
+        if (inputValue.trim() === "") {
             toast.error("Input field cannot be empty");
         }
     }

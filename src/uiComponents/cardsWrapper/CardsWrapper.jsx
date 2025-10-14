@@ -16,7 +16,7 @@ const CardsWrapper = ({ data = [], title = '' }) => {
         </div>
 
         <div className="card-wrapper-content">
-          <div className="g-4 row row-cols-lg-5 row-cols-md-3 row-cols-2">
+          <div className="g-4 row row-cols-lg-4 row-cols-md-3 row-cols-2">
             <div className="col">
               <div className="card-header">
                 <h1 className="card-heading">Popular Products</h1>
@@ -26,7 +26,8 @@ const CardsWrapper = ({ data = [], title = '' }) => {
                   {data.map((item, index) => {
                     return (
                       <Card className="popular-cards">
-                        <img className="card-img" src={item.imgSrc} />
+                        <img className="card-img" src={item.imgSrc || item.img1} alt={item.title || item.name} />
+
                         <h3 className="item-title">{item.title}</h3>
                         <p>{item.description}</p>
                         <Flex gap="middle" vertical style={{ marginBottom: "17px" }}>

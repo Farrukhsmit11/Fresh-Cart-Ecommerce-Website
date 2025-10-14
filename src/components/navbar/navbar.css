@@ -17,15 +17,13 @@
     color: #3d4f58;
 }
 
-
-.nav-container {
+.navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background: #fff;
+    justify-content: space-between;
     border-bottom: 1px solid #eee;
     padding-bottom: 1rem !important;
     padding: .625rem 1rem;
+    background: #fff;
 }
 
 

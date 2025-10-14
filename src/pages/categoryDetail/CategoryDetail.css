@@ -75,3 +75,8 @@
     flex-direction: column;
     gap: 20px;
 }
+
+
+.filter-right{
+    margin-bottom: 15px;
+}
