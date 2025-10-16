@@ -2,10 +2,13 @@
 import { Breadcrumb, Button, Popconfirm, Space, Table } from 'antd';
 import "./Wishlist.css"
 import { MdDelete } from "react-icons/md";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import Wishlistdata from "./Wishlist.json"
+
 const Wishlist = () => {
+
+    const [dataSource, setDataSource] = useState([]);
 
     const [selectionType, setSelectionType] = useState("checkbox");
     const [data, setData] = useState(Wishlistdata);
@@ -15,6 +18,19 @@ const Wishlist = () => {
         setData(newData);
         toast.success('Product deleted successfully!');
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     const columns = [
@@ -84,7 +100,6 @@ const Wishlist = () => {
         <>
             <div className="container">
                 <div className="table-content">
-
                     <Breadcrumb
                         className='links'
                         items={[
@@ -107,7 +122,7 @@ const Wishlist = () => {
 
                 <Table
                     columns={columns}
-                    dataSource={data}
+                    dataSource={dataSource}
                     className='shop-wishlist-table' bordered
                     rowSelection={{ type: selectionType, ...rowSelection }}
                     pagination={false}

@@ -1,4 +1,4 @@
-import "./PopularProducts.css"
+
 import Productlist from "./Productlist.json"
 import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
 

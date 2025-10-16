@@ -9,8 +9,6 @@ import { useRef } from "react";
 import slideData from "./Slide.json"
 import CButton from "../../uiComponents/cButton/CButton";
 import "../../uiComponents/cButton/CButton.css"
-import Categories from "../../components/category/Categories"
-import Footer from "../footer/Footer";
 
 
 const HeroCards = () => {
@@ -64,10 +62,6 @@ const HeroCards = () => {
                     </Swiper>
                 </div >
             </section>
-
-
-            <Categories />
-            <Footer />
         </>
     )
 }

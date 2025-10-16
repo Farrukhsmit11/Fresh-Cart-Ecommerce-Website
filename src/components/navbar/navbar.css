@@ -18,8 +18,8 @@
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
     border-bottom: 1px solid #eee;
     padding-bottom: 1rem !important;
     padding: .625rem 1rem;
@@ -70,7 +70,7 @@
 .nav-left {
     display: flex;
     align-items: center;
-    margin-right: 79px;
+    /* margin-right: 79px; */
     gap: 40px;
 }
 

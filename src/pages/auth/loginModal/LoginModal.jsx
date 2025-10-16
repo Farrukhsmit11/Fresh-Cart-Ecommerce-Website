@@ -23,7 +23,7 @@ const LoginModal = ({ isOpenSignupModal, setIsOpenSignupModal }) => {
 
     const onFinishFailed = () => {
         if (inputValue.trim() === "") {
-            toast.error("Input field cannot be empty");
+            toast.error("Input field cannot be empty");   
         }
     }
 

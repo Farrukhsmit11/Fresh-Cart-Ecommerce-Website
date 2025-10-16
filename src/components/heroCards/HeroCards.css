@@ -1,6 +1,6 @@
 .section-padding {
     width: 100% !important;
-    padding: 20px 0;
+    padding: 24px 0;
 }
 
 .slide-wrapper {
@@ -14,12 +14,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Plus Jakarta Sans" !important;
-}
-
-
-.container {
-    margin: 0 auto !important;
-    width: 100%;
 }
 
 

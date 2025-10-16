@@ -1,5 +1,5 @@
 import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Input, Badge, Form as AntForm, Drawer, Alert, Divider } from "antd";
+import { Button, Input, Badge, Form as AntForm, Drawer, Alert, List } from "antd";
 import "./Navbar.css";
 import { useState } from "react";
 import { Toaster } from 'react-hot-toast';
@@ -8,7 +8,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import LoginModal from "../../pages/auth/loginModal/LoginModal";
 import LocationModal from "../locationModal/LocationModal"
 
-const Navbar = () => {
+const Navbar = ({ cartItems, setCartItems }) => {
   const [form] = AntForm.useForm();
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState('right');
@@ -27,8 +27,6 @@ const Navbar = () => {
   const onClose = () => {
     setOpen(false);
   };
-
-
 
   // navigate to wihslist on same page function
 
@@ -80,6 +78,7 @@ const Navbar = () => {
             />
 
             <FaCartArrowDown onClick={showDrawer} className="nav-cart-icon" />
+
             <Drawer
               title={
                 <div>
@@ -96,7 +95,19 @@ const Navbar = () => {
               onClose={onClose}
               open={open}
             >
-              <Alert message="You’ve got FREE delivery. Start checkout now!" type="success" />
+              <List
+                dataSource={cartItems}
+                renderItem={(item) => (
+                  <List.Item
+                    actions={[<Button key="button">Hello button</Button>]}
+                    key={item.id}>
+                    {item.title}
+                    <div>{item.title}</div>
+                  </List.Item>
+                )}
+              />
+
+              {/* <Alert message="You’ve got FREE delivery. Start checkout now!" type="success" /> */}
             </Drawer>
           </div>
         </div>
@@ -111,7 +122,6 @@ const Navbar = () => {
         IslocationModal={IslocationModal}
         setIslocationModal={setIslocationModal}
       />
-
     </div>
   );
 };

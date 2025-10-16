@@ -1,13 +1,10 @@
 .footer {
     background: #f0f3f2;
     padding: 4rem 0;
-    display: none;
+    display: flex;
 }
 
-.nav-items {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
+
 
 .links-main {
     display: flex;
@@ -19,19 +16,17 @@
 .nav-links {
     text-decoration: none;
     margin: 8px 0;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     color: #6a5252;
     transition: color 0.3s ease;
     font-weight: 600;
+    padding: 0;
 }
 
-.footer .container {
-    max-width: 100%;
-    padding-left: 50px;
-    padding-right: 0;
+.nav-links:hover {
+    color: #0aad0a;
 }
-
 .footer-heading {
     margin-bottom: 11px;
 }
