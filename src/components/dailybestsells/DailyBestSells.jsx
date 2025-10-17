@@ -4,31 +4,6 @@ import { PlusOutlined } from "@ant-design/icons"
 import SellsData from "./SellsData.json"
 
 const DailyBestSells = () => {
-
-    const renderer = ({ days, hours, minutes, seconds }) => {
-        return (
-            <div className="countdown-container">
-                <div className="countdown-box">
-                    <p>{days}</p>
-                </div>
-
-                <div className="countdown-box">
-                    <p>{hours}</p>
-                </div>
-
-                <div className="countdown-box">
-                    {minutes}
-                </div>
-
-                <div className="countdown-box">
-                    {seconds}
-                </div>
-            </div>
-        )
-
-    }
-
-
     return (
         <section className="section-padding">
             <div className="container">

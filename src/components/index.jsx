@@ -6,10 +6,12 @@ import Navbar from "../components/navbar/Navbar"
 import ShopNowCard from "../components/ShopnowCard/ShopNowCard"
 import Wishlist from "../components/wishlist/Wishlist"
 import Categories from "../components/categories/Categories"
+import FeaturesSection from "../components/featuresSection/FeaturesSection"
 
 export {
     Categories,
     DailyBestSells,
+    FeaturesSection,
     Footer,
     HeroCards,
     Popularproducts,

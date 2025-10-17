@@ -1,0 +1,25 @@
+.feature-icon {
+    color: #0aad0a;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.feature-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 65px;
+    align-items: center;
+    margin-bottom: 66px;
+}
+
+
+.feature-content {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 13px;
+}

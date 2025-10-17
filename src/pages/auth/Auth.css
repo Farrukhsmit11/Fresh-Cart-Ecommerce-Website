@@ -7,6 +7,7 @@
 
 
 .fresh-cart-banner nav {
+    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,13 +27,15 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Sign in Form */
+
+/* Sign in Page css */
 
 .auth-wrapper {
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
+
 }
 
 
@@ -70,13 +73,13 @@ h1 {
 
 
 .sign-in-btn {
-    width: 100%;
-    padding: 20px;
+    padding: 22px;
     display: flex;
     justify-content: center;
     text-align: center;
     background: #0aad0a;
     font-weight: 700;
+    border-radius: 10px;
 }
 
 
@@ -85,9 +88,10 @@ h1 {
 }
 
 
-.sign-in-heading{
+.sign-in-heading {
     font-weight: 700;
-    font-size: 26px;
+    font-size: 28px;
+    color: #21313c;
 }
 
 
@@ -100,7 +104,7 @@ h1 {
 
 
 
-/* /* login css code */
+/* /* login Modal code css */
 
 .signup-modal .ant-modal-title {
     font-size: 29px;
@@ -144,8 +148,6 @@ h1 {
     cursor: pointer;
 }
 
-
-
 .agree-to-terms p {
     text-align: justify;
     color: #3d4f58;
@@ -173,8 +175,6 @@ h1 {
     border-radius: 9px;
     padding: 6px;
 }
-
-
 
 .password-input {
     border: 1px solid #dfe2e1;

@@ -38,11 +38,13 @@
 
 
 .add-to-cart-btn {
-    width: 82px;
+   width: 98px;
     background: #0aad0a;
     color: white;
     font-weight: 600;
+    font-size: 10px;
     font-family: "Plus Jakarta Sans";
+
 }
 
 

@@ -1,6 +1,7 @@
 import { Button, Checkbox, Form, Input } from "antd"
 import "../../../pages/auth/Auth.css"
 import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Signin = () => {
     const [form] = Form.useForm();
@@ -23,26 +24,32 @@ const Signin = () => {
     const onFinish = values => {
         console.log(values);
         form.resetFields();
+        toast.success("Login Sucessfull")
     };
 
 
     return (
         <>
             <div className="fresh-cart-banner">
-                <nav className="shadow-sm">
-                    <div className="logo">
-                        <img
-                            className="cart-logo"
-                            src="https://freshcart-next-js-template.netlify.app/images/logo/freshcart-logo.svg"
-                            alt="Fresh Cart Logo"
-                        />
+                <Toaster />
+                <div className="container">
+                    <div className="row my-lg-14 my-8">
+                        <nav className="shadow-sm">
+                            <div className="logo">
+                                <img
+                                    className="cart-logo"
+                                    src="https://freshcart-next-js-template.netlify.app/images/logo/freshcart-logo.svg"
+                                    alt="Fresh Cart Logo"
+                                />
+                            </div>
+                            <div className="content-right">
+                                <div className="nav-content">
+                                    <p>Already have an account? <a href="">Sign in</a></p>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                    <div className="content-right">
-                        <div className="nav-content">
-                            <p>Already have an account? <a href="">Sign in</a></p>
-                        </div>
-                    </div>
-                </nav>
+                </div>
             </div>
 
 
@@ -67,9 +74,9 @@ const Signin = () => {
                                 className="signIn-form"
                             >
                                 <Form.Item
-                                    name={['user', 'email']}
+                                    name="email"
                                     rules={[{ type: "email", required: true, message: "Please enter email Address" }]}>
-                                    <Input className="email-input" placeholder="Email" autoComplete="off" />
+                                    <Input className="email-input" placeholder="Email" autoComplete="email" />
                                 </Form.Item>
 
                                 <Form.Item
@@ -77,9 +84,8 @@ const Signin = () => {
                                     rules={[{ required: true, message: 'Please input your Password!' }]}
                                     hasFeedback
                                 >
-                                    <Input.Password className="password-input" type="password" placeholder="*****" />
+                                    <Input.Password className="password-input" placeholder="Password" autoComplete="current-password" />
                                 </Form.Item>
-
 
                                 <div className="chekbox-main">
                                     <Checkbox className="tick-select-btn">Remember me </Checkbox>
@@ -92,7 +98,7 @@ const Signin = () => {
 
                                 <Form.Item label={null}>
                                     <Button className="sign-in-btn" type="primary" htmlType="submit" block>
-                                        Sign In
+                                        Sign in
                                     </Button>
                                 </Form.Item>
 
