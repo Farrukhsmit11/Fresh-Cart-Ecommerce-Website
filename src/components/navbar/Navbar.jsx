@@ -14,10 +14,9 @@ const Navbar = ({ cartItems, setCartItems }) => {
   const [placement, setPlacement] = useState('right');
   const [IsloginModdal, setIsloginModdal] = useState(false);
   const [IslocationModal, setIslocationModal] = useState(false);
-
   const navigate = useNavigate();
 
-  // Drawer Functionality
+  // Cart Drawer Functionality
   const showDrawer = () => {
     setOpen(true);
   };
@@ -28,90 +27,95 @@ const Navbar = ({ cartItems, setCartItems }) => {
     setOpen(false);
   };
 
-  // navigate to wihslist on same page function
+  // navigate to wihslist
 
   const navigatetowishlist = () => {
     navigate("/Wishlist");
   }
 
-
   return (
     <div className="container">
-      <nav className="navbar">
-        <Toaster />
-        <div className="nav-left">
-          <div className="logo">
-            <img
-              className="cart-logo"
-              src="https://freshcart-next-js-template.netlify.app/images/logo/freshcart-logo.svg"
-              alt="Fresh Cart Logo"
-            />
-          </div>
-        </div>
-        <div className="nav-middle-section">
-          <Input
-            size="large"
-            placeholder="Search for products..."
-            type="search"
-            suffix={<SearchOutlined />}
-            className="search-input"
-          />
-          <Button
-            onClick={() => setIslocationModal(true)}
-            type="primary"
-            className="location-btn"
-          >
-            <EnvironmentOutlined style={{ fontSize: "16px", color: "#5c6c75" }} />
-            Location
-          </Button>
-        </div>
-
-        <div className="nav-right">
-          <div className="nav-icons">
-            <Badge count={5}>
-              <HeartOutlined style={{ fontSize: "24px", color: "#5c6c75" }} onClick={navigatetowishlist} />
-            </Badge>
-
-            <UserOutlined
-              onClick={() => setIsloginModdal(true)}
-              style={{ fontSize: "24px", color: "#5c6c75" }}
-            />
-
-            <FaCartArrowDown onClick={showDrawer} className="nav-cart-icon" />
-
-            <Drawer
-              title={
-                <div>
-                  <div style={{ fontSize: "18px", fontWeight: "bold" }}>
-                    Shop Cart
-                  </div>
-                  <div style={{ fontSize: "14px", color: "gray" }}>
-                    Location in 382480
-                  </div>
-                </div>
-              }
-              placement={placement}
-              width={500}
-              onClose={onClose}
-              open={open}
-            >
-              <List
-                dataSource={cartItems}
-                renderItem={(item) => (
-                  <List.Item
-                    actions={[<Button key="button">Hello button</Button>]}
-                    key={item.id}>
-                    {item.title}
-                    <div>{item.title}</div>
-                  </List.Item>
-                )}
+      <div className="nav-container">
+        <nav className="navbar">
+          <Toaster />
+          <div className="nav-left">
+            <div className="logo">
+              <img
+                className="cart-logo"
+                src="https://freshcart-next-js-template.netlify.app/images/logo/freshcart-logo.svg"
+                alt="Fresh Cart Logo"
               />
-
-              {/* <Alert message="You’ve got FREE delivery. Start checkout now!" type="success" /> */}
-            </Drawer>
+            </div>
           </div>
-        </div>
-      </nav>
+
+          {/* Nav middle section */}
+          <div className="nav-middle-section">
+            <div className="input-group">
+              <Input
+                size="large"
+                placeholder="Search for products..."
+                type="search"
+                suffix={<SearchOutlined />}
+                className="search-input"
+              />
+              <Button
+                onClick={() => setIslocationModal(true)}
+                type="primary"
+                className="location-btn"
+              >
+                <EnvironmentOutlined className="locationn-icon" />
+                Location
+              </Button>
+            </div>
+          </div>
+
+
+          <div className="nav-right">
+            <div className="nav-icons">
+              {/* Icons */}
+              <Badge count={5}>
+                <HeartOutlined onClick={navigatetowishlist} className="wishlist-icon" />
+              </Badge>
+
+              <UserOutlined
+                onClick={() => setIsloginModdal(true)}
+                className="user-icon"
+              />
+              <FaCartArrowDown onClick={showDrawer} className="nav-cart-icon" />
+
+              {/* {Cart Drawer} */}
+              <Drawer
+                title={
+                  <div>
+                    <div>
+                      <h1 className="drawer-title">Shop Cart</h1>
+                    </div>
+                    <div>
+                      <p>Location in 382480</p>
+                    </div>
+                  </div>
+                }
+                placement={placement}
+                width={500}
+                onClose={onClose}
+                open={open}
+              >
+                <List
+                  dataSource={cartItems}
+                  renderItem={(item) => (
+                    <List.Item
+                      actions={[<Button key="button">Hello button</Button>]}
+                      key={item.id}>
+                      {item.title}
+                      <div>{item.title}</div>
+                    </List.Item>
+                  )}
+                />
+              </Drawer>
+            </div>
+          </div>
+        </nav>
+      </div >
 
       <LoginModal
         isOpenSignupModal={IsloginModdal}
@@ -122,7 +126,7 @@ const Navbar = ({ cartItems, setCartItems }) => {
         IslocationModal={IslocationModal}
         setIslocationModal={setIslocationModal}
       />
-    </div>
+    </div >
   );
 };
 

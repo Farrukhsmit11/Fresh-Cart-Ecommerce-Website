@@ -19,7 +19,7 @@ const FeaturesSection = () => {
                     <div className="feature-wrapper">
                         {FeaturesData.map((item, index) => {
                             return (
-                                <div className="card-div mb-8 mb-xl-0">
+                                <div className="card-div mb-8 mb-xl-0" key={index}>
                                     <div className="feature-icon">{iconMap[item.icon]}</div>
                                     <div className="feature-content">
                                         {item.title}

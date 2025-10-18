@@ -5,6 +5,9 @@ import AddCartBtn from "../cButton/AddCartBtn"
 
 const CardsWrapper = ({ data = [], title = '', className, cartItems, setCartItems }) => {
 
+  console.log(cartItems);
+  
+
   const handleAddtoCart = (product) => {
     console.log("Adding to cart:", product);
     const existingItem = cartItems.find(item => item.id === product.id)
@@ -42,22 +45,25 @@ const CardsWrapper = ({ data = [], title = '', className, cartItems, setCartItem
                 <div className="cards-grid">
                   {data.map((item, index) => {
                     return (
-                      <Card className="popular-cards">
-                        <img className="card-img" src={item.imgSrc || item.img1} alt={item.title || item.name} />
+                      <div className="cards-main" key={index}>
+                        <Card className="popular-cards">
+                          <img className="card-img" src={item.imgSrc || item.img1} alt={item.title || item.name} />
 
-                        <h3 className="item-title">{item.title}</h3>
-                        <p>{item.description}</p>
-                        <Flex gap="middle" vertical style={{ marginBottom: "17px" }}>
-                          <Flex gap="middle">
-                            <Rate className="cards-rate" defaultValue={3} allowClear={false} />
+                          <h3 className="item-title">{item.title}</h3>
+                          <p>{item.description}</p>
+                          <Flex gap="middle" vertical style={{ marginBottom: "17px" }}>
+                            <Flex gap="middle">
+                              <Rate className="cards-rate" defaultValue={3} allowClear={false} />
+                            </Flex>
                           </Flex>
-                        </Flex>
 
-                        <div className="add-to-cart">
-                          ${Number(item.price).toFixed(2)}
-                          <AddCartBtn onClick={() => handleAddtoCart(item)} className="add-to-cart-btn"> <PlusOutlined /></AddCartBtn>
-                        </div>
-                      </Card>
+                          <div className="add-to-cart">
+                            ${Number(item.price).toFixed(2)}
+                            <AddCartBtn onClick={() => handleAddtoCart(item)} className="add-to-cart-btn"> <PlusOutlined /></AddCartBtn>
+                          </div>
+                        </Card>
+                      </div>
+
                     )
                   })}
                 </div>

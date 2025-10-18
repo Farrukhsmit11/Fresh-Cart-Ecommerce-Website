@@ -5,6 +5,7 @@ import SignIn from "./pages/auth/signIn/SignIn"
 import { Navbar, Wishlist } from "./components";
 import CategoryDetail from "./pages/categoryDetail/CategoryDetail"
 import Home from "./pages/home/Home";
+import CardsWrapper from "./uiComponents/cardsWrapper/CardsWrapper";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,7 +23,8 @@ function App() {
 
   return (
     <>
-      {location.pathname !== "/signin" && <Navbar />}
+      <Navbar/>
+      {/* {location.pathname !== "/signin" && <Navbar />} */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,6 +32,8 @@ function App() {
         <Route path="/signIn" element={<SignIn />}></Route>
         <Route path="/categorydetail" element={<CategoryDetail />}></Route>
       </Routes>
+
+     
 
     </>
 

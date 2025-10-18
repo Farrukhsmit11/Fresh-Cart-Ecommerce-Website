@@ -2,8 +2,15 @@
     font-family: "Plus Jakarta Sans" !important;
     font-weight: 600;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+.nav-container {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+}
 
 /* navbar */
 
@@ -18,22 +25,29 @@
 }
 
 .navbar {
-    /* display: flex;
-    justify-content: space-between; */
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1rem !important;
-    padding: .625rem 1rem;
+    padding: 12px 40px;
     background: #fff;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 
 .nav-middle-section {
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex: 1;
+
 }
 
-
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+}
 
 .ant-modal-title {
     padding: 11px 0;
@@ -44,10 +58,7 @@
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 16px;
 }
-
-
 
 .btn-outline-gray-400 {
     --fc-btn-color: #c1c7c6;
@@ -70,25 +81,16 @@
 .nav-left {
     display: flex;
     align-items: center;
-    /* margin-right: 79px; */
     gap: 40px;
 }
 
 .search-input {
     width: 500px;
     border: 1px solid #f0f0f0;
-    border-radius: 9px;
+    border-radius: 10px;
     padding: 11px 12px;
     transition: border-color 0.3s;
     border: 1px solid #dfe2e1;
-}
-
-
-.input-group {
-    display: flex;
-    padding: 23px;
-    gap: 8px;
-    color: #5c6c75;
 }
 
 .location-btn {
@@ -141,8 +143,6 @@ a {
     color: #0aad0a;
 }
 
-
-
 .department-btn {
     background: #0aad0a;
     color: white;
@@ -156,7 +156,31 @@ a {
 /* ///////////////////// */
 
 .nav-cart-icon {
-    font-size: 24px;
+    font-size: 20 px;
     color: #5c6c75;
     cursor: pointer;
+}
+
+.user-icon {
+    font-size: 20px;
+    color: #5c6c75;
+
+}
+
+.wishlist-icon {
+    font-size: 23px;
+    color: #5c6c75;
+}
+
+
+.drawer-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.location-icon {
+    font-size: 24px;
+    font-weight: 600;
+    color: #5c6c75;
+
 }

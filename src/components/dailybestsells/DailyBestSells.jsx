@@ -22,8 +22,8 @@ const DailyBestSells = () => {
 
                     {SellsData.map((product, index) => {
                         return (
-                            <div className="cards">
-                                <Card key={index}>
+                            <div className="cards" key={product.id || index}>
+                                <Card>
                                     <div className="cards-content">
                                         <img src={product.img} />
                                         <p>{product.description}</p>
