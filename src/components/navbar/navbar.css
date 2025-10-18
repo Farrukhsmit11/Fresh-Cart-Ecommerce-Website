@@ -84,10 +84,10 @@
     gap: 40px;
 }
 
-.search-input {
+.search-input  {
     width: 500px;
     border: 1px solid #f0f0f0;
-    border-radius: 10px;
+    border-radius: 10px !important;
     padding: 11px 12px;
     transition: border-color 0.3s;
     border: 1px solid #dfe2e1;
@@ -95,7 +95,7 @@
 
 .location-btn {
     padding: 19px;
-    border-radius: 8px;
+    border-radius: 8px !important;
     height: 45px;
     width: 122px;
     background: white;
