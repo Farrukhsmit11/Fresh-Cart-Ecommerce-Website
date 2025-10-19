@@ -5,7 +5,7 @@ import AddCartBtn from "../cButton/AddCartBtn"
 
 const CardsWrapper = ({ data = [], title = '', className, cartItems, setCartItems }) => {
 
-  console.log(cartItems);
+  // console.log(cartItems);
   
 
   const handleAddtoCart = (product) => {

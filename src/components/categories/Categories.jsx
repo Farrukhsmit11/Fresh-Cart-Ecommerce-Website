@@ -1,4 +1,4 @@
-import { Card } from "antd"
+import { Card, Col, Row } from "antd"
 const { Meta } = Card;
 import "./Categories.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -31,30 +31,46 @@ const Categories = () => {
                     }}
 
                     modules={[Autoplay, Navigation]}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 2,
+                            spacebetween: 20
+                        },
+
+                        1024: {
+                            slidesPerView: 6,
+
+                        }
+                    }
+                    }
+
                     className="mySwiper"
                 >
-                    {Items.map((item, index) => {
-                        return (
-                            <SwiperSlide key={index}>
+                    <Row gutter={[16, 16]}>
+                        {Items.map((item, index) => {
+                            return (
+                                <SwiperSlide key={index}>
 
-                                {/* <CardsWrapper data={Productlist} className={`slider-view`} /> */}
+                                    {/* <CardsWrapper data={Productlist} className={`slider-view`} /> */}
+                                        <Card
+                                            className="card1 mb-lg-4 card"
+                                            onClick={navigatedDetailpage}
 
-                                <Card
-                                    className="card1"
-                                    onClick={navigatedDetailpage}
+                                        >
+                                            <Meta
+                                                avatar={<img className="categories-img" src={item.imgSrc} alt={item.title} />}
+                                                title={item.title}
+                                            />
+                                        </Card>
+                                
 
-                                >
-                                    <Meta
-                                        avatar={<img className="" src={item.imgSrc} alt={item.title} />}
-                                        title={item.title}
-                                    />
-                                </Card>
-                            </SwiperSlide>
-                        )
-                    })}
+                                </SwiperSlide>
+                            )
+                        })}
+                    </Row>
                 </Swiper>
             </div>
-        </section>
+        </section >
 
 
     )

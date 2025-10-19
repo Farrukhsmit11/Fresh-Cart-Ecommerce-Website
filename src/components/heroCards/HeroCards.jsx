@@ -36,6 +36,12 @@ const HeroCards = () => {
                         }}
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
+                        breakpoints={{
+                            320: {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            },
+                        }}
 
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
                         className="mySwiper"

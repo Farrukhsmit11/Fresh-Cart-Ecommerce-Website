@@ -1,4 +1,4 @@
-import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined } from "@ant-design/icons";
+import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined, MenuOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import { Button, Input, Badge, Form as AntForm, Drawer, Alert, List } from "antd";
 import "./Navbar.css";
 import { useState } from "react";
@@ -15,6 +15,8 @@ const Navbar = ({ cartItems, setCartItems }) => {
   const [IsloginModdal, setIsloginModdal] = useState(false);
   const [IslocationModal, setIslocationModal] = useState(false);
   const navigate = useNavigate();
+  const [showMenu, setShowMneu] = useState(false);
+  const [Menuleft , setMenuleft] = useState("left");
 
   // Cart Drawer Functionality
   const showDrawer = () => {
@@ -33,6 +35,20 @@ const Navbar = ({ cartItems, setCartItems }) => {
     navigate("/Wishlist");
   }
 
+
+  // Hamburger Menu
+  const showMenuDrawer = () => {
+    setShowMneu(true)
+  }
+
+  const Menuclose = () => {
+    setShowMneu(false)
+  }
+
+
+
+
+
   return (
     <div className="container">
       <div className="nav-container">
@@ -49,7 +65,7 @@ const Navbar = ({ cartItems, setCartItems }) => {
           </div>
 
           {/* Nav middle section */}
-          <div className="nav-middle-section">
+          <div className="nav-middle-section deskstop-only">
             <div className="input-group">
               <Input
                 size="large"
@@ -69,13 +85,31 @@ const Navbar = ({ cartItems, setCartItems }) => {
             </div>
           </div>
 
+          <div className="hamburger-menu-section">
+            <MenuFoldOutlined className="hamburger-icon" onClick={showMenuDrawer} />
+            <Drawer
+              title="Basic Drawer"
+              placement={placement}
+              closable={false}
+              onClose={Menuclose}
+              open={showMenu}
+              key={placement}
+            >
+              <Input
+                size="large"
+                placeholder="Search for products..."
+                type="search"
+                suffix={<SearchOutlined />}
+                className="search-input"
+              />
+            </Drawer>
+          </div>
+
 
           <div className="nav-right">
             <div className="nav-icons">
               {/* Icons */}
-              <Badge count={5}>
-                <HeartOutlined onClick={navigatetowishlist} className="wishlist-icon" />
-              </Badge>
+              <HeartOutlined onClick={navigatetowishlist} className="wishlist-icon" />
 
               <UserOutlined
                 onClick={() => setIsloginModdal(true)}

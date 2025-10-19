@@ -5,7 +5,7 @@ import SignIn from "./pages/auth/signIn/SignIn"
 import { Navbar, Wishlist } from "./components";
 import CategoryDetail from "./pages/categoryDetail/CategoryDetail"
 import Home from "./pages/home/Home";
-import CardsWrapper from "./uiComponents/cardsWrapper/CardsWrapper";
+import "./Mobilequery.css"
 
 function App() {
   const [loading, setLoading] = useState(true);

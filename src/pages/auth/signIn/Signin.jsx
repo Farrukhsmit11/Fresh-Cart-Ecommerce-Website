@@ -22,7 +22,7 @@ const Signin = () => {
     };
 
     const onFinish = values => {
-        console.log(values);
+        // console.log(values);
         form.resetFields();
         toast.success("Login Sucessfull")
     };

@@ -1,0 +1,129 @@
+@media (min-width: 320px) and (max-width: 767px) {
+    .search-input {
+        width: 298px;
+    }
+
+    .location-btn {
+        display: none;
+    }
+
+    .hamburger-icon {
+        color: rgb(10 173 10);
+        font-size: 15px;
+        display: block !important;
+    }
+
+    .nav-middle-section {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-right {
+        order: 2;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .wishlist-icon,
+    .user-icon,
+    .nav-cart-icon {
+        font-size: 15px;
+        color: #333;
+    }
+
+    .hamburger-menu-section {
+        order: 3;
+    }
+
+    .nav-icons {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .cart-logo {
+        width: 111px;
+    }
+
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card-heading {
+        font-size: 15px;
+    }
+
+
+
+    /* Category section */
+
+    .category-title {
+        font-size: 20px;
+    }
+
+
+    .card1 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
+    .categories-img {
+        width: 98px;
+    }
+
+
+    /* ////////////////////////// */
+
+
+
+    /* Hero section */
+
+    .slider-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .slide-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide-content {
+        width: 100%;
+    }
+
+    .slide-description {
+        font-size: 12px;
+    }
+
+    .grocery-title {
+        font-size: 15px;
+    }
+
+    /* //////////////////////// */
+
+
+
+    /* Daily Best sells */
+
+
+    .best-sell-grid {
+        overflow: scroll;
+    }
+
+
+    /* Feature section */
+
+    .feature-wrapper {
+        display: grid;
+    }
+}
