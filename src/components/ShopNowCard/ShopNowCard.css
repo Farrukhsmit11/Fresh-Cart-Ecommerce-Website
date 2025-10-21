@@ -5,42 +5,34 @@
     margin-bottom: 11px;
 }
 
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
+.card-image-section {
+    position: relative;
 }
 
-.cards-section .ant-row {
-    gap: 204px;
+
+.shop-now-cards{
     display: flex;
-    justify-content: stretch;
-    align-items: center;
+    gap: 36px;
 }
+
 
 .product-card-description {
     font-weight: 600;
     color: gray;
+    text-align: justify;
 }
 
 .overlay {
-    width: 100%;
     position: absolute;
     top: 31%;
     left: 6%;
 }
 
 
-@media (min-width: 768px) {
-    .col-md-6 {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-}
-
 .card-image {
-    width: 611px;
-    border-radius: var(--fc-border-radius);
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-    display: flex;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }

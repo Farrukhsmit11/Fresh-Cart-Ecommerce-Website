@@ -2,8 +2,14 @@ import { Card, Flex, Rate, Row } from "antd"
 import "./CardsWrapper.css"
 import { PlusOutlined } from "@ant-design/icons"
 import AddToCartBtn from "../addToCartBtn/AddToCartBtn"
+import { useState } from "react"
+import { IoIosGitCompare } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
+import { FaEye } from "react-icons/fa";
 
 const CardsWrapper = ({ data = [], title = '', className, cartItems, setCartItems }) => {
+
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleAddtoCart = (product) => {
     console.log("Adding to cart:", product);
@@ -47,8 +53,23 @@ const CardsWrapper = ({ data = [], title = '', className, cartItems, setCartItem
                     {data.map((item, index) => {
                       return (
                         <div className="cards-main" key={index}>
-                          <Card className="popular-cards">
+                          <Card className="popular-cards"
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            actions={
+                              isHovered
+                                ? [
+                                  <div className={`card-icons ${isHovered ? "show" : ""}`}>
+                                    <IoIosGitCompare />
+                                    <CiHeart />
+                                    <FaEye />
+                                  </div>
+                                ]
+                                : []
+                            }>
+
                             <img className="card-img" src={item.imgSrc || item.img1} alt={item.title || item.name} />
+
 
                             <h3 className="item-title">{item.title}</h3>
                             <p className="item-subtitle">{item.description}</p>
@@ -70,10 +91,10 @@ const CardsWrapper = ({ data = [], title = '', className, cartItems, setCartItem
                 </Row>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-    </div>
+          </div >
+        </div >
+      </section >
+    </div >
 
 
   )

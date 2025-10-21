@@ -1,10 +1,12 @@
 import { Button, Checkbox, Form, Input } from "antd"
 import "../../../pages/auth/Auth.css"
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 const Signin = () => {
     const [form] = Form.useForm();
+
+    const navigate = useNavigate()
 
     const layout = {
         labelCol: { span: 8 },
@@ -26,6 +28,10 @@ const Signin = () => {
         toast.success("Login Sucessfull")
     };
 
+
+    const handleReset = () => {
+        navigate("/forgotpassword")
+    }
 
     return (
         <>
@@ -90,7 +96,7 @@ const Signin = () => {
                                     <Checkbox className="tick-select-btn">Remember me </Checkbox>
                                     <div className="forgot-password">
                                         <p className="form-description">Forgot Password?
-                                            <Link to={"/"}>Reset it</Link>
+                                            <Button onClick={handleReset}>Reset</Button>
                                         </p>
                                     </div>
                                 </div>

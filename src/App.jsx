@@ -1,15 +1,16 @@
 import Loader from "./components/loader/Loader"
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom"
-import SignIn from "./pages/auth/signIn/SignIn"
+import { Route, Routes, useLocation } from "react-router-dom"
 import { Navbar, Wishlist } from "./components";
 import CategoryDetail from "./pages/categoryDetail/CategoryDetail"
 import Home from "./pages/home/Home";
 import "./Mobilequery.css"
+import { SignIn, ForgotPassword } from "./pages";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,18 +24,15 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-      {/* {location.pathname !== "/signin" && <Navbar />} */}
+      {location.pathname !== "/signIn" && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
         <Route path="/categorydetail" element={<CategoryDetail />}></Route>
+        <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
       </Routes>
-
-     
-
     </>
 
   );

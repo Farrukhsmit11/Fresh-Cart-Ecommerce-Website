@@ -3,12 +3,11 @@ import { useState } from "react";
 
 const LocationModal = ({ isOpenLocationModal, setisLocationModal }) => {
 
-    const [openlocationModal, setopenlocationModal] = useState(false)
+    const [openlocationModal, setOpenlocationModal] = useState(false)
 
-    const Oncancel = () => {
-        setopenlocationModal(false)
+    const handleCancel = () => {
+        setOpenlocationModal(false)
     }
-
 
     return (
         <div>
@@ -18,9 +17,8 @@ const LocationModal = ({ isOpenLocationModal, setisLocationModal }) => {
                 footer={null}
                 className="location-modal"
                 onCancel={() => {
-                    Oncancel();
+                    handleCancel();
                     setisLocationModal(false);
-                    form.resetFields();
                 }}
             >
                 <p>Enter your address and we will specify the offer you area.</p>

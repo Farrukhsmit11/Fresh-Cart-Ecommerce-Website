@@ -8,7 +8,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import LoginModal from "../../pages/auth/loginModal/LoginModal";
 import LocationModal from "../locationModal/LocationModal"
 
-const Navbar = ({ cartItems, setCartItems }) => {
+const Navbar = () => {
   const [form] = AntForm.useForm();
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState('right');
@@ -48,7 +48,7 @@ const Navbar = ({ cartItems, setCartItems }) => {
 
   return (
     <div className="container">
-      <div className="nav-container">
+      <div className="container">
         <nav className="navbar">
           <Toaster />
           <div className="nav-left">
@@ -132,7 +132,7 @@ const Navbar = ({ cartItems, setCartItems }) => {
                 open={open}
               >
                 <List
-                  dataSource={cartItems}
+                  // dataSource={Cartitems}
                   renderItem={(item) => (
                     <List.Item
                       actions={[<Button key="button">Hello button</Button>]}
@@ -154,8 +154,8 @@ const Navbar = ({ cartItems, setCartItems }) => {
       />
 
       <LocationModal
-        IslocationModal={IslocationModal}
-        setIslocationModal={setIslocationModal}
+        isOpenLocationModal={IslocationModal}
+        setislocationModal={setIslocationModal}
       />
     </div>
   );
