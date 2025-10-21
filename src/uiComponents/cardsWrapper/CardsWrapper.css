@@ -1,79 +1,55 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.card-wrapper-content{
-    display: flex;
-}
-
-
-.popular-cards-main {
+.card-wrapper {
     width: 100%;
-    max-width: 250px;
-    overflow: hidden;
+    padding: 20px 0;
 }
 
-
-.item-title {
-    font-size: 16px;
-    margin: 0;
-    padding: 8px 0;
-}
-
-
-.card-img {
-    width: 167px;
+.card-wrapper-main {
+    display: flex;
+    gap: 34px;
+    align-items: center;
 }
 
 .popular-cards {
-    width: 246px;
-}
-
-
-
-.cards-rate {
-    font-size: 16px;
-}
-
-
-.add-to-cart {
     display: flex;
-    align-items: center;
-    gap: 51px;
-}
-
-
-.add-to-cart-btn {
-    width: 98px;
-    background: #0aad0a;
-    color: white;
-    font-weight: 600;
-    font-size: 10px;
-    font-family: "Plus Jakarta Sans";
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 16px 8px;
 
 }
-
 
 
 .popular-cards-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 45px;
 }
 
-.popular-cards {
+
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
     height: 100%;
-    flex-direction: column;
+    object-fit: contain;
+    padding: 44px;
 }
 
 
-.card-heading {
-    font-size: 22px;
-    margin-bottom: 31px;
-    font-weight: 600;
+.slider-view {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
 }

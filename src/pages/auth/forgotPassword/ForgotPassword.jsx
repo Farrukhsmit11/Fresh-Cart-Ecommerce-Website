@@ -28,7 +28,8 @@ const ForgotPassword = () => {
 
 
   return (
-    <div>
+
+    <>
       <Banner />
       <div className="container">
         <div className="auth-wrapper">
@@ -64,7 +65,8 @@ const ForgotPassword = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
+
   )
 }
 

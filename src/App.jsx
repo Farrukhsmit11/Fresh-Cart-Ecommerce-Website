@@ -9,7 +9,6 @@ import { SignIn, ForgotPassword } from "./pages";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [cartItems, setCartItems] = useState([]);
   const location = useLocation();
 
   useEffect(() => {

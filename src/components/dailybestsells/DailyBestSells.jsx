@@ -1,7 +1,7 @@
 import { Button, Card, Rate, Flex } from "antd"
 import "./DailyBestSells.css"
-import { PlusOutlined } from "@ant-design/icons"
 import SellsData from "./SellsData.json"
+import CardWrapper from "../../uiComponents/cardsWrapper/CardsWrapper"
 
 const DailyBestSells = () => {
     return (
@@ -23,23 +23,10 @@ const DailyBestSells = () => {
                     {SellsData.map((product, index) => {
                         return (
                             <div className="cards" key={product.id || index}>
-                                <Card>
-                                    <div className="cards-content">
-                                        <img src={product.img} />
-                                        <p>{product.description}</p>
-                                        <h1>{product.title}</h1>
-
-                                        <Flex className="rating-main">
-                                            <p style={{ fontWeight: 600, fontSize: "16px", margin: 0 }}>
-                                                ${Number(product.price).toFixed(2)}
-                                            </p>
-                                            <Rate defaultValue={3} className="cards-rate"></Rate>
-                                        </Flex>
-                                        <div className="buttons">
-                                            <Button className="cart-add-btn"> <PlusOutlined /> Add to Cart</Button>
-                                        </div>
-                                    </div>
-                                </Card>
+                                <CardWrapper
+                                    data={[product]}
+                                    className={"cards-one"}
+                                />
                             </div>
                         )
                     })}
