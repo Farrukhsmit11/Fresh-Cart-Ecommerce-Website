@@ -9,12 +9,6 @@ import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
 
 const CategoryDetail = () => {
 
-    const [disabled, setDisabled] = useState(false);
-
-    const onChange = checked => {
-        setDisabled(checked);
-    };
-
     const handleChange = value => {
         console.log(`selected ${value}`);
     };

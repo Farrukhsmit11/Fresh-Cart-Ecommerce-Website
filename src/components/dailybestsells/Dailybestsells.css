@@ -175,10 +175,6 @@ p {
 
 
 @media (max-width: 768px) {
-    .best-sell-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
 
     .cards-grid {
         display: grid;

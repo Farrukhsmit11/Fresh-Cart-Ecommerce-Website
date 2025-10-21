@@ -1,5 +1,5 @@
 import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined, MenuOutlined, MenuFoldOutlined } from "@ant-design/icons";
-import { Button, Input, Badge, Form as AntForm, Drawer, Alert, List } from "antd";
+import { Button, Input, Badge, Form as AntForm, Drawer, List, Divider } from "antd";
 import "./Navbar.css";
 import { useState } from "react";
 import { Toaster } from 'react-hot-toast';
@@ -16,7 +16,7 @@ const Navbar = ({ cartItems, setCartItems }) => {
   const [IslocationModal, setIslocationModal] = useState(false);
   const navigate = useNavigate();
   const [showMenu, setShowMneu] = useState(false);
-  const [Menuleft , setMenuleft] = useState("left");
+  const [Menuleft, setMenuleft] = useState("left");
 
   // Cart Drawer Functionality
   const showDrawer = () => {
@@ -44,9 +44,6 @@ const Navbar = ({ cartItems, setCartItems }) => {
   const Menuclose = () => {
     setShowMneu(false)
   }
-
-
-
 
 
   return (
@@ -89,8 +86,8 @@ const Navbar = ({ cartItems, setCartItems }) => {
             <MenuFoldOutlined className="hamburger-icon" onClick={showMenuDrawer} />
             <Drawer
               title="Basic Drawer"
-              placement={placement}
-              closable={false}
+              placement={Menuleft}
+              closable={true}
               onClose={Menuclose}
               open={showMenu}
               key={placement}
@@ -160,7 +157,7 @@ const Navbar = ({ cartItems, setCartItems }) => {
         IslocationModal={IslocationModal}
         setIslocationModal={setIslocationModal}
       />
-    </div >
+    </div>
   );
 };
 

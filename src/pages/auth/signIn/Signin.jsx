@@ -22,7 +22,6 @@ const Signin = () => {
     };
 
     const onFinish = values => {
-        // console.log(values);
         form.resetFields();
         toast.success("Login Sucessfull")
     };
@@ -117,4 +116,3 @@ const Signin = () => {
 }
 
 export default Signin
-

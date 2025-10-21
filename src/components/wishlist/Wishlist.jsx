@@ -9,7 +9,6 @@ import Wishlistdata from "./Wishlist.json"
 const Wishlist = () => {
 
     const [dataSource, setDataSource] = useState([]);
-
     const [selectionType, setSelectionType] = useState("checkbox");
     const [data, setData] = useState(Wishlistdata);
 
@@ -18,20 +17,6 @@ const Wishlist = () => {
         setData(newData);
         toast.success('Product deleted successfully!');
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     const columns = [
         {

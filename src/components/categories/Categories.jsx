@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Items from "./Items.json"
 import { useNavigate } from "react-router-dom";
+import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
 
 const Categories = () => {
 
@@ -40,30 +41,35 @@ const Categories = () => {
                         1024: {
                             slidesPerView: 6,
 
-                        }
-                    }
-                    }
+                        },
 
+                        800: {
+                            slidesPerView: 4
+                        },
+
+                         640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                    }
+                    }
                     className="mySwiper"
                 >
                     <Row gutter={[16, 16]}>
                         {Items.map((item, index) => {
                             return (
                                 <SwiperSlide key={index}>
+                                    {/* <CardsWrapper data={Items} className={`slider-view`} /> */}
+                                    <Card
+                                        className="card1 mb-lg-4 card"
+                                        onClick={navigatedDetailpage}
 
-                                    {/* <CardsWrapper data={Productlist} className={`slider-view`} /> */}
-                                        <Card
-                                            className="card1 mb-lg-4 card"
-                                            onClick={navigatedDetailpage}
-
-                                        >
-                                            <Meta
-                                                avatar={<img className="categories-img" src={item.imgSrc} alt={item.title} />}
-                                                title={item.title}
-                                            />
-                                        </Card>
-                                
-
+                                    >
+                                        <Meta
+                                            avatar={<img className="categories-img" src={item.imgSrc} alt={item.title} />}
+                                            title={item.title}
+                                        />
+                                    </Card>
                                 </SwiperSlide>
                             )
                         })}
