@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.products-grid{
+    display: grid;
+}
+
 .category-detail-main {
     display: flex;
 }

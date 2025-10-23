@@ -1,8 +1,6 @@
 h3 {
     font-weight: 600;
     font-size: 17px;
-    color: var(--fc-heading-color);
-    margin-bottom: 24px;
 }
 
 .card1 {
@@ -17,7 +15,6 @@ h3 {
 .cards {
     display: flex;
     gap: 28px;
-    text-align: center;
 }
 
 
@@ -38,9 +35,6 @@ h3 {
     height: 100%;
 }
 
-.swiper-slide {
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.slider-view .card-img {
+    width: 99px;
 }

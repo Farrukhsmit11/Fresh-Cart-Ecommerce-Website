@@ -94,7 +94,7 @@
 .best-sell-grid {
     display: flex;
     gap: 32px;
-    align-items: stretch;
+    align-items: center;
     margin-bottom: 36px;
 }
 

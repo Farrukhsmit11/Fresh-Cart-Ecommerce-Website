@@ -7,7 +7,9 @@ const AddCartBtn = ({ onClick }) => {
         <div className="button-wrapper">
             <div className="container">
                 <div className="row">
-                    <Button className="add-to-cart-btn" onClick={onClick}> <PlusOutlined /> Add</Button>
+                    <div className="col">
+                    <Button className="add-to-cart-btn" onClick={onClick}> <PlusOutlined /> Add </Button>
+                    </div>
                 </div>
             </div>
         </div>

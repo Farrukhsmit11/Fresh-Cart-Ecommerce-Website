@@ -2,10 +2,9 @@ import Loader from "./components/loader/Loader"
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom"
 import { Navbar, Wishlist } from "./components";
-import CategoryDetail from "./pages/categoryDetail/CategoryDetail"
 import Home from "./pages/home/Home";
 import "./Mobilequery.css"
-import { SignIn, ForgotPassword } from "./pages";
+import { SignIn, ForgotPassword , CategoryDetail } from "./pages";
 
 function App() {
   const [loading, setLoading] = useState(true);

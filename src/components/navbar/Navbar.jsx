@@ -1,5 +1,5 @@
-import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined, MenuOutlined, MenuFoldOutlined } from "@ant-design/icons";
-import { Button, Input, Badge, Form as AntForm, Drawer, List, Divider } from "antd";
+import { SearchOutlined, HeartOutlined, EnvironmentOutlined, UserOutlined, MenuFoldOutlined, } from "@ant-design/icons";
+import { Button, Input, Form as AntForm, Drawer, List } from "antd";
 import "./Navbar.css";
 import { useState } from "react";
 import { Toaster } from 'react-hot-toast';
@@ -14,29 +14,25 @@ const Navbar = () => {
   const [placement, setPlacement] = useState('right');
   const [IsloginModdal, setIsloginModdal] = useState(false);
   const [IslocationModal, setIslocationModal] = useState(false);
+   const [showMenu, setShowMneu] = useState(false);
+  const [Menuleft, setMenuleft] = useState('left');
   const navigate = useNavigate();
-  const [showMenu, setShowMneu] = useState(false);
-  const [Menuleft, setMenuleft] = useState("left");
 
   // Cart Drawer Functionality
   const showDrawer = () => {
     setOpen(true);
   };
-  const onChange = e => {
-    setPlacement(e.target.value);
-  };
+
   const onClose = () => {
     setOpen(false);
   };
 
-  // navigate to wihslist
+  // navigate to wishlist
 
   const navigatetowishlist = () => {
     navigate("/Wishlist");
   }
 
-
-  // Hamburger Menu
   const showMenuDrawer = () => {
     setShowMneu(true)
   }
@@ -44,6 +40,7 @@ const Navbar = () => {
   const Menuclose = () => {
     setShowMneu(false)
   }
+
 
 
   return (
@@ -132,7 +129,6 @@ const Navbar = () => {
                 open={open}
               >
                 <List
-                  // dataSource={Cartitems}
                   renderItem={(item) => (
                     <List.Item
                       actions={[<Button key="button">Hello button</Button>]}
@@ -155,7 +151,7 @@ const Navbar = () => {
 
       <LocationModal
         isOpenLocationModal={IslocationModal}
-        setislocationModal={setIslocationModal}
+        setIsLocationModal={setIslocationModal}
       />
     </div>
   );

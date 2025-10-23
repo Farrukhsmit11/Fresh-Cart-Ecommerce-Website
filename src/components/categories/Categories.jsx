@@ -1,4 +1,4 @@
-import { Row } from "antd"
+
 import "./Categories.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -6,8 +6,11 @@ import 'swiper/css/pagination';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Items from "./Items.json"
 import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
+
+    const navigate = useNavigate();
 
     return (
         <section className="section-padding">
@@ -47,19 +50,18 @@ const Categories = () => {
                     }
                     className="mySwiper"
                 >
-                    <Row gutter={[16, 16]}>
-                        {Items.map((item, index) => {
-                            return (
-                                <SwiperSlide key={index}>
-                                    <CardsWrapper
-                                        data={[item]}
-                                        className="slider-view"
-                                        onClick={() => navigate("/categorydetail")}
-                                    />
-                                </SwiperSlide>
-                            )
-                        })}
-                    </Row>
+                    {Items.map((item, index) => {
+                        return (
+                            <SwiperSlide key={index}>
+                                <CardsWrapper
+                                    data={[item]}
+                                    className="slider-view"
+                                    onClick={() => navigate("/categorydetail")}
+                                    
+                                />
+                            </SwiperSlide>
+                        )
+                    })}
                 </Swiper>
             </div>
         </section>

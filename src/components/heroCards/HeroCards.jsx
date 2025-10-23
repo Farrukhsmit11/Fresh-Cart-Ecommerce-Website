@@ -10,8 +10,6 @@ import slideData from "./Slide.json"
 import CButton from "../../uiComponents/cButton/CButton";
 import "../../uiComponents/cButton/CButton.css"
 
-
-
 const HeroCards = () => {
     const progressCircle = useRef(null);
     const progressContent = useRef(null);
@@ -53,8 +51,7 @@ const HeroCards = () => {
                                     <div className="slide-wrapper">
                                         <img className="slide-image" src={slide.imgSrc} />
                                         <div className="slide-content">
-                                            {/* <span className="badge">{slide.Badge}</span> */}
-                                            <h1 className="grocery-title" style={{ fontWeight: 'bold', marginTop: '16px' }}>{slide.title}</h1>
+                                            <h1 className="hero-cards-title">{slide.title}</h1>
                                             <p className="slide-description">{slide.description}</p>
                                             <CButton />
                                         </div>

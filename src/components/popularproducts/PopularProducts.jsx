@@ -7,10 +7,11 @@ const PopularProducts = () => {
     return (
         <section className="section-padding">
             <div className="container">
-                <div className="g-4 row row-cols-lg-5 row-cols-md-3 row-cols-2">
+                <div className="row">
                     <div className="col">
                         <CardsWrapper
                             data={Productlist}
+                            title="Popular Products"
                         />
                     </div>
                 </div>

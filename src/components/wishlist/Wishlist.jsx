@@ -107,10 +107,10 @@ const Wishlist = () => {
 
                 <Table
                     columns={columns}
-                    dataSource={dataSource}
+                    dataSource={data}
                     className='shop-wishlist-table' bordered
                     rowSelection={{ type: selectionType, ...rowSelection }}
-                    pagination={false}
+                    pagination={true}
                 />
             </div>
         </>

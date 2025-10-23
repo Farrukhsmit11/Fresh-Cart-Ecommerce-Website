@@ -3,9 +3,8 @@ import { Layout, Menu, Select, Space } from "antd"
 import "./CategoryDetail.css"
 import { Content } from "antd/es/layout/layout";
 import Menuitems from "./Menuitems.json"
-import { useState } from "react";
-import ProductDetail from "./ProductDetail.json"
 import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
+import ProductDetail from "./ProductDetail.json"
 
 const CategoryDetail = () => {
 
@@ -73,8 +72,13 @@ const CategoryDetail = () => {
 
                             <div className="products-grid">
                                 <div className="cards-data-main">
-                                    <CardsWrapper title="" data={ProductDetail} >
-                                    </CardsWrapper>
+                                    {ProductDetail.map((product, index) => {
+                                        return (
+                                            <CardsWrapper title="" data={[product]} >
+                                            </CardsWrapper>
+                                        )
+                                    })}
+
                                 </div>
                             </div>
                         </Content>

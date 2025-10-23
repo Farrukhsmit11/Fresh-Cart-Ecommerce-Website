@@ -1,27 +1,28 @@
 import { Card, Flex, Rate, Row } from "antd"
 import "./CardsWrapper.css"
-import { PlusOutlined } from "@ant-design/icons"
 import AddToCartBtn from "../addToCartBtn/AddToCartBtn"
 
 const CardsWrapper = ({ data = [], title = '', className }) => {
 
+
   return (
     <div className={className ? `slider-view` : `card-wrapper-main`}>
       <div className="container">
+        <h3>{title}</h3>
         <div className="row">
           <div className="card-wrapper-header">
-            {title}
+
           </div>
           <div
             className="popular-cards-grid"
           >
             {data.map((item, index) => {
               return (
-                <Card className="popular-cards"
+                <Card key={index} className="popular-cards"
                 >
                   <div className="card-content">
                     <div className="card-img-wrapper">
-                      <img className="card-img" src={item.imgSrc || item.img1} />
+                      <img className="card-img" src={item.imgSrc || item.image} />
                     </div>
                   </div>
 
@@ -32,13 +33,9 @@ const CardsWrapper = ({ data = [], title = '', className }) => {
                     <Rate defaultValue={3} allowClear={false} className="cards-rate" />
                   </Flex>
 
-                  <div className="add-to-cart">
-                    <AddToCartBtn
-                      onClick={() => handleAddtoCart(item)}
-                      className="add-to-cart-btn"
-                    >
-                      <PlusOutlined />
-                    </AddToCartBtn>
+                  <div className="price-wrapper">
+                    <span className="current-price">${item.price}</span>
+                    <AddToCartBtn />
                   </div>
                 </Card>
               )

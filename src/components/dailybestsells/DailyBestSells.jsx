@@ -1,4 +1,4 @@
-import { Button, Card, Rate, Flex } from "antd"
+import { Button } from "antd"
 import "./DailyBestSells.css"
 import SellsData from "./SellsData.json"
 import CardWrapper from "../../uiComponents/cardsWrapper/CardsWrapper"
@@ -18,11 +18,9 @@ const DailyBestSells = () => {
                             <Button className="shop-btn">Shop Now</Button>
                         </div>
                     </div>
-
-
                     {SellsData.map((product, index) => {
                         return (
-                            <div className="cards" key={product.id || index}>
+                            <div className="cards" key={index}>
                                 <CardWrapper
                                     data={[product]}
                                     className={"cards-one"}

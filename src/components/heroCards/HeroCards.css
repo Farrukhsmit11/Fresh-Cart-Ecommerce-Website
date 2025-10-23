@@ -83,34 +83,11 @@ p {
 }
 
 
-.grocery-title {
+.hero-cards-title {
     font-size: 49px;
     font-weight: 700;
-    -fc-text-opacity: 1;
-    color: rgba(var(--fc-dark-rgb), var(--fc-text-opacity)) !important;
+    color: #001E2B;
 }
-
-@media (min-width: 1200px) {
-    .slider-heading {
-        font-size: 3rem;
-    }
-}
-
-
-
-
-@media (min-width: 1400px) {
-
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl {
-        max-width: 1320px;
-    }
-}
-
 
 .shop-now-btn {
     padding: 22px;
