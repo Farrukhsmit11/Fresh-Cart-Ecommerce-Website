@@ -19,7 +19,6 @@ const CategoryDetail = () => {
                     <div className="sidebar-left">
                         <div className="categories-section">
                             <Menu
-                                title="Categories"
                                 style={{ width: 256, marginBottom: "20px" }}
                                 defaultSelectedKeys={['1']}
                                 defaultOpenKeys={['sub1']}
@@ -52,35 +51,19 @@ const CategoryDetail = () => {
                                                 ]}
                                             />
                                         </Space>
-
-                                        <Space wrap>
-                                            <Select
-                                                defaultValue="Sort by: Featured"
-                                                style={{ width: 200 }}
-                                                onChange={handleChange}
-                                                options={[
-                                                    { value: 'option2', label: 'Price: low to high', featured: false },
-                                                    { value: 'option3', label: 'Price High to low', featured: true },
-                                                    { value: 'option4', label: 'Release Date', featured: false },
-                                                    { value: 'option5', label: 'Rating', featured: true },
-                                                ]}
-                                            />
-                                        </Space>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="products-grid">
-                                <div className="cards-data-main">
-                                    {ProductDetail.map((product, index) => {
-                                        return (
-                                            <CardsWrapper title="" data={[product]} >
-                                            </CardsWrapper>
-                                        )
-                                    })}
-
-                                </div>
+                            <div className="cards-grid">
+                                {ProductDetail.map((product, index) => {
+                                    return (
+                                        <CardsWrapper title="" data={[product]} >
+                                        </CardsWrapper>
+                                    )
+                                })}
                             </div>
+
                         </Content>
                     </Layout>
                 </div>

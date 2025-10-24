@@ -1,15 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 
-.products-grid{
-    display: grid;
-}
-
-.category-detail-main {
-    display: flex;
-}
 
 .breadcrumb-section {
     padding: 48px 0;
@@ -58,7 +47,6 @@
 
 .main-wrapper {
     display: flex;
-    max-width: 1400px;
     width: 100%;
 }
 
@@ -78,13 +66,13 @@
 }
 
 
-.filter-right{
+.filter-right {
     margin-bottom: 15px;
     display: flex;
     gap: 9px;
 }
 
-.product-found-left{
+.product-found-left {
     display: flex;
     justify-content: space-between;
     gap: 48px;

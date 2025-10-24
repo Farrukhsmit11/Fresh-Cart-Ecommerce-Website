@@ -4,13 +4,9 @@
     display: flex;
 }
 
-
-
 .links-main {
     display: flex;
     flex-direction: column;
-
-
 }
 
 .nav-links {

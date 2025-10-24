@@ -15,14 +15,6 @@
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Plus Jakarta Sans" !important;
-}
-
-
 .swiper-button-prev {
     display: none !important;
 }
@@ -30,11 +22,6 @@
 
 .swiper-button-next {
     display: none !important;
-}
-
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
 }
 
 .slide-wrapper img {

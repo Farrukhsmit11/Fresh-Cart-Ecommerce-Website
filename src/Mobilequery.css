@@ -110,7 +110,7 @@
         font-size: 14px;
     }
 
-    .grocery-title {
+    .hero-cards-title {
         font-size: 25px;
     }
 
@@ -161,12 +161,12 @@
 
     /* Popular Products */
 
-    .item-title {
+    .popular-cards-title {
         font-size: 12px;
         margin: 4px 0;
     }
 
-    .item-subtitle {
+    .popular-cards-subtitle {
         font-size: 13px;
     }
 

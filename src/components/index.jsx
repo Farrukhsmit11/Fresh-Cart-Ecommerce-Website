@@ -7,6 +7,8 @@ import ShopNowCard from "../components/ShopnowCard/ShopNowCard"
 import Wishlist from "../components/wishlist/Wishlist"
 import Categories from "../components/categories/Categories"
 import FeaturesSection from "../components/featuresSection/FeaturesSection"
+import AddToCartBtn from "../components/addToCartBtn/AddToCartBtn"
+import Banner from "./banner/Banner"
 
 export {
     Categories,
@@ -18,4 +20,6 @@ export {
     Navbar,
     ShopNowCard,
     Wishlist,
+    AddToCartBtn,
+    Banner
 }

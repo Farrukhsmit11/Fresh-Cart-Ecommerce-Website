@@ -1,10 +1,8 @@
 import { Card, Flex, Rate, Row } from "antd"
 import "./CardsWrapper.css"
-import AddToCartBtn from "../addToCartBtn/AddToCartBtn"
+import AddToCartBtn from "../../components/addToCartBtn/AddToCartBtn"
 
 const CardsWrapper = ({ data = [], title = '', className }) => {
-
-
   return (
     <div className={className ? `slider-view` : `card-wrapper-main`}>
       <div className="container">
@@ -26,8 +24,8 @@ const CardsWrapper = ({ data = [], title = '', className }) => {
                     </div>
                   </div>
 
-                  <h3 className="item-title">{item.title}</h3>
-                  <p className="item-subtitle">{item.description}</p>
+                  <h3 className="popular-cards-title">{item.title}</h3>
+                  <p className="popular-cards-subtitle">{item.description}</p>
 
                   <Flex vertical gap="small" style={{ marginBottom: 16 }}>
                     <Rate defaultValue={3} allowClear={false} className="cards-rate" />

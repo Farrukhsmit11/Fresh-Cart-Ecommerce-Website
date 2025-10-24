@@ -1,14 +1,15 @@
 import Loader from "./components/loader/Loader"
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom"
-import { Navbar, Wishlist } from "./components";
+import { Footer, Navbar, Wishlist } from "./components";
 import Home from "./pages/home/Home";
 import "./Mobilequery.css"
-import { SignIn, ForgotPassword , CategoryDetail } from "./pages";
+import { SignIn, ForgotPassword, CategoryDetail } from "./pages";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+  const currentPath = location.pathname
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <>
-      {location.pathname !== "/signIn" && <Navbar />}
+      {currentPath === "/" && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,6 +32,8 @@ function App() {
         <Route path="/categorydetail" element={<CategoryDetail />}></Route>
         <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
       </Routes>
+      <Footer />
+
     </>
 
   );

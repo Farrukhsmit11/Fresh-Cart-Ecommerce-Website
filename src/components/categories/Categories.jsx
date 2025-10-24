@@ -5,8 +5,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Items from "./Items.json"
-import CardsWrapper from "../../uiComponents/cardsWrapper/CardsWrapper";
 import { useNavigate } from "react-router-dom";
+import { Card } from "antd";
 
 const Categories = () => {
 
@@ -20,6 +20,7 @@ const Categories = () => {
                     slidesPerView={'6'}
                     spaceBetween={30}
                     navigation={true}
+                    speed={1000}
                     loop={true}
                     autoplay={{
                         delay: 3500,
@@ -53,12 +54,16 @@ const Categories = () => {
                     {Items.map((item, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <CardsWrapper
-                                    data={[item]}
-                                    className="slider-view"
-                                    onClick={() => navigate("/categorydetail")}
-                                    
-                                />
+                                <Card className="category-card"
+                                onClick={() => navigate("/categorydetail")}
+                                >
+                                    <div className="card-content">
+                                        <img src={item.imgSrc} />
+                                    </div>
+                                    <div className="card-info">
+                                        <p className="items-category">{item.category}</p>
+                                    </div>
+                                </Card>
                             </SwiperSlide>
                         )
                     })}

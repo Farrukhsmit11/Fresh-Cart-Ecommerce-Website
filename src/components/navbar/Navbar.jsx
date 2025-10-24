@@ -44,7 +44,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="container">
+    // <div className="container">
       <div className="container">
         <nav className="navbar">
           <Toaster />
@@ -142,7 +142,7 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-      </div >
+      {/* </div > */}
 
       <LoginModal
         isOpenSignupModal={IsloginModdal}

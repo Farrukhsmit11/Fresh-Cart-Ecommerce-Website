@@ -157,10 +157,6 @@
     width: 100%;
 }
 
-p {
-    color: gray;
-
-}
 
 .time-left-wrapper {
     display: flex;
@@ -172,17 +168,6 @@ p {
     align-items: center;
     gap: 13px
 }
-
-
-@media (max-width: 768px) {
-
-    .cards-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-
-    }
-}
-
 
 /* Countdown */
 .countdown-container {

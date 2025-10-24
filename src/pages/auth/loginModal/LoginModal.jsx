@@ -1,6 +1,6 @@
 
 import { Button, Input, Modal, Form as AntForm } from "antd";
-import "../../../pages/auth/Auth.css"
+import "./LoginModal.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -79,7 +79,7 @@ const LoginModal = ({ isOpenSignupModal, setIsOpenSignupModal }) => {
                         >
                             <Input
                                 placeholder="Enter your Email Address"
-                                className="email-input"
+                                className="login-email-input"
                                 type="email"
                             />
                         </AntForm.Item>
@@ -96,7 +96,7 @@ const LoginModal = ({ isOpenSignupModal, setIsOpenSignupModal }) => {
                         >
                             <Input.Password
                                 placeholder="Enter your password"
-                                className="email-input"
+                                className="login-password-input"
                             />
                         </AntForm.Item>
 

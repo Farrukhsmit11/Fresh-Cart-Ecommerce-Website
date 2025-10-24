@@ -1,0 +1,74 @@
+
+.saas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block:50px;
+}
+
+.auth-wrapper-header-left{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.auth-wrapper-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.password-input,
+.email-input {
+    padding: 10px;
+    border-radius: 9px;
+    width: 433px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.sign-in-btn {
+    padding: 19px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #0aad0a;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+
+.text-sm {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin:0px;
+}
+
+
+.input-main {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.chekbox-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.auth-header {
+    margin-bottom: 35px;
+}
+
+.sign-in-heading{
+    font-size: 26px;
+    font-weight: 700;
+}

@@ -1,0 +1,37 @@
+.fresh-cart-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.fresh-cart-banner nav .logo img {
+    height: 40px;
+}
+
+.auth-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.banner-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+}
+
+.account-link {
+    color: #21313c;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+.fresh-cart-banner img {
+    height: 32px;
+}

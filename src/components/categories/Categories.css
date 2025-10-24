@@ -1,26 +1,14 @@
-h3 {
-    font-weight: 600;
-    font-size: 17px;
-}
 
 .card1 {
     width: 186px;
     height: 220px;
     text-align: center;
     display: flex;
-
-
 }
 
 .cards {
     display: flex;
     gap: 28px;
-}
-
-
-.ant-card-meta {
-    display: flex;
-    flex-direction: column;
 }
 
 .category-title {
@@ -37,4 +25,8 @@ h3 {
 
 .slider-view .card-img {
     width: 99px;
+}
+
+.items-category {
+    text-align: center;
 }
