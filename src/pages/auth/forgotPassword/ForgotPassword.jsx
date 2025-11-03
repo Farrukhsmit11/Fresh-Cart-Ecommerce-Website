@@ -1,34 +1,25 @@
-import { Button, Form, Input } from "antd"
+import { Button, Form as AntForm, Input } from "antd"
 import "./ForgotPassword.css"
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { Banner } from "../../../components"
+import { Formik } from "formik";
+import { ForgotPasswordSchema } from "./ForgotPasswordSchema";
 
 const ForgotPassword = () => {
 
   const navigate = useNavigate();
 
-  const [form] = Form.useForm();
+  const [form] = AntForm.useForm();
 
-  const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-  };
-
-  const validateMessages = {
-    required: '${label} is required!',
-    types: {
-      email: '${label} is not a valid email!',
-      number: '${label} is not a valid number!',
-    },
-    number: {
-      range: '${label} must be between ${min} and ${max}',
-    },
-  };
-
-  const onFinish = values => {
+  const handleSubmit = (values) => {
     form.resetFields();
-  };
+    console.log("Password reset sucessfully", values)
+  }
+
+  const initialValues = {
+    email: ""
+  }
 
 
   return (
@@ -48,32 +39,44 @@ const ForgotPassword = () => {
                   <h1 className="forgot-password-heading">Forgot your Password?</h1>
                   <p className="form-subtitile">Please enter the email address associated with your account</p>
 
-                  <Form
-                    layout="vertical"
-                    form={form}
-                    name="nest-messages"
-                    onFinish={onFinish}
-                    style={{ maxWidth: 450 }}
-                    validateMessages={validateMessages}
-                    className="signIn-form"
+                  <Formik
+                    initialValues={initialValues}
+                    validationSchema={ForgotPasswordSchema}
+                    onSubmit={handleSubmit}
                   >
-                    <Form.Item
-                      name="email"
-                      rules={[{ type: "email", required: true, message: "Please enter email Address" }]}>
-                      <Input className="email-input-one" placeholder="Email" autoComplete="email" />
-                    </Form.Item>
+                    {({
+                      handleSubmit,
+                      handleChange,
+                      handleBlur,
+                      touched,
+                      errors,
+                      values
+                    }) => (
+                      <AntForm layout="vertical" form={form} onFinish={handleSubmit}>
+                        <AntForm.Item
+                          validateStatus={touched.email && errors.email ? "error" : ""}
+                          help={
+                            touched.email && errors.email ? (
+                              <span>{errors.email}</span>
+                            ) : null
+                          }
+                        >
+                          <Input value={values.email} onChange={handleChange} onBlur={handleBlur} className="email-input" name="email" placeholder="Email" required ></Input>
+                        </AntForm.Item>
 
-                    <div className="buttons">
-                      <Button htmlType="submit" className="reset-btn">Reset Password</Button>
-                      <Button onClick={() => navigate("../signIn")} className="back-to-login-btn"><ArrowLeftOutlined /> Back to Login</Button>
-                    </div>
-                  </Form>
+                        <div className="buttons">
+                          <Button htmlType="submit" className="reset-btn">Reset Password</Button>
+                          <Button onClick={() => navigate("../signIn")} className="back-to-login-btn"><ArrowLeftOutlined /> Back to Login</Button>
+                        </div>
+                      </AntForm>
+                    )}
+                  </Formik>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
     </>
 

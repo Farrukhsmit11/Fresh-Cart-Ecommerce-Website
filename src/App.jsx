@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom"
 import { Footer, Navbar, Wishlist } from "./components";
 import Home from "./pages/home/Home";
-import "./Mobilequery.css"
+import "./Media.css"
 import { SignIn, ForgotPassword, CategoryDetail } from "./pages";
 
 function App() {

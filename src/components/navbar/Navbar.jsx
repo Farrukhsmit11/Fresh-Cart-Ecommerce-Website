@@ -29,7 +29,7 @@ const Navbar = () => {
 
   // navigate to wishlist
 
-  const navigatetowishlist = () => {
+  const navigateToWishlist = () => {
     navigate("/Wishlist");
   }
 
@@ -44,7 +44,6 @@ const Navbar = () => {
 
 
   return (
-    // <div className="container">
       <div className="container">
         <nav className="navbar">
           <Toaster />
@@ -103,7 +102,7 @@ const Navbar = () => {
           <div className="nav-right">
             <div className="nav-icons">
               {/* Icons */}
-              <HeartOutlined onClick={navigatetowishlist} className="wishlist-icon" />
+              <HeartOutlined onClick={navigateToWishlist} className="wishlist-icon" />
 
               <UserOutlined
                 onClick={() => setIsloginModdal(true)}
@@ -142,7 +141,6 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-      {/* </div > */}
 
       <LoginModal
         isOpenSignupModal={IsloginModdal}

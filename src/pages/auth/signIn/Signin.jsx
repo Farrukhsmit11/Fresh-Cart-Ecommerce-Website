@@ -1,17 +1,23 @@
-import { Button, Checkbox, Form, Input } from "antd"
+import { Button, Checkbox, Form as AntForm, Input } from "antd"
 import "./Signin.css"
 import { useNavigate } from "react-router-dom";
 import { Banner } from "../../../components"
-import validateMessages from "./Validation";
+import { Formik } from "formik";
+import Validation from "./Validation"
 
 const Signin = () => {
-    const [form] = Form.useForm();
 
+    const [form] = AntForm.useForm();
     const navigate = useNavigate()
 
-    const onFinish = values => {
-        form.resetFields();
-    };
+    const initialValues = {
+        email: "",
+        password: ""
+    }
+
+    const handleSubmit = (values) => {
+        console.log("Signing in", values)
+    }
 
     return (
         <>
@@ -30,58 +36,74 @@ const Signin = () => {
                                     <h1 className="sign-in-heading">Sign in to FreshCart</h1>
                                     <p className="">Welcome back to FreshCart! Enter your email to get started.</p>
                                 </div>
-                                <Form
-                                    layout="vertical"
-                                    form={form}
-                                    name="nest-messages"
-                                    onFinish={onFinish}
-                                    style={{ maxWidth: 450 }}
-                                    validateMessages={validateMessages}
-                                    className="signIn-form"
+
+                                <Formik
+                                    initialValues={initialValues}
+                                    validationSchema={Validation}
+                                    onSubmit={handleSubmit}
                                 >
-                                    <div className="input-main">
-                                        <Form.Item
-                                            name="email"
-                                            rules={[{ type: "email", required: true, message: "Please enter email Address" }]}>
-                                            <Input className="email-input" placeholder="Email" autoComplete="email" />
-                                        </Form.Item>
+                                    {({
+                                        handleSubmit,
+                                        handleBlur,
+                                        handleChange,
+                                        touched,
+                                        errors,
+                                        values
+                                    }) => (
+                                        <AntForm layout="vertical" form={form} onFinish={handleSubmit}>
+                                            <AntForm.Item
+                                                help={
+                                                    touched.email && errors.email ? (
+                                                        <span>{errors.email}</span>
+                                                    ) : null
+                                                }
+                                                validateStatus={touched.email && errors.email ? "error" : ""}
+                                            >
+                                                <Input value={values.email} onChange={handleChange} onBlur={handleBlur} className="email-input" name="email" placeholder="Email" ></Input>
+                                            </AntForm.Item>
 
-                                        <Form.Item
-                                            name="password"
-                                            rules={[{ required: true, message: 'Please input your Password!' }]}
-                                            hasFeedback
-                                        >
-                                            <Input.Password className="password-input" placeholder="Password" autoComplete="current-password" />
-                                        </Form.Item>
-                                    </div>
+                                            <AntForm.Item
+                                                help={
+                                                    touched.password && errors.password ? (
+                                                        <span>{errors.password}</span>
+                                                    ) : null
+                                                }
+                                                validateStatus={touched.password && errors.password ? "error" : ""}
+                                            >
+                                                <Input className="email-input password" name="password" type="password" value={values.password} onChange={handleChange} onBlur={handleBlur} placeholder="Password"></Input>
+                                            </AntForm.Item>
+                                        </AntForm>
+                                    )}
+                                </Formik>
 
 
-                                    <div className="chekbox-main">
-                                        <Checkbox className="tick-select-btn">Remember me </Checkbox>
-                                        <div className="social-links-main">
-                                            <p className="form-title">Forgot password?
-                                                <a href="#" onClick={() => navigate("/forgotpassword")}>Reset It</a>
-                                            </p>
-                                        </div>
-                                    </div>
 
-                                    <Form.Item>
-                                        <Button className="sign-in-btn" type="primary" htmlType="submit" block>
-                                            Sign in
-                                        </Button>
-                                    </Form.Item>
 
-                                    <div className="forgot-password">
-                                        <p className="text-sm">Dont have an account?
-                                            <a href="#" to={"/"}>Sign Up</a>
+
+
+
+                                <div className="chekbox-main">
+                                    <Checkbox className="tick-select-btn">Remember me </Checkbox>
+                                    <div className="social-links-main">
+                                        <p className="form-title">Forgot password?
+                                            <a href="#" onClick={() => navigate("/forgotpassword")}>Reset It</a>
                                         </p>
                                     </div>
-                                </Form>
+                                </div>
+                                <Button className="sign-in-btn" type="primary" htmlType="submit" block>
+                                    Sign in
+                                </Button>
+
+                                <div className="forgot-password">
+                                    <p className="text-sm">Dont have an account?
+                                        <a href="#" to={"/"}>Sign Up</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

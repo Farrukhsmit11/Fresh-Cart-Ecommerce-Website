@@ -9,10 +9,3 @@
         max-width: 1320px;
     }
 }
-
-
-@media (min-width: 1200px) {
-    .slider-heading {
-        font-size: 3rem;
-    }
-}
